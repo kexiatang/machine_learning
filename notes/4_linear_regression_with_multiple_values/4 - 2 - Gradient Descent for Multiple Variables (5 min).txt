@@ -1,0 +1,172 @@
+
+In the previous video, we talked
+about the form of the
+hypothesis for linear regression
+with multiple features or with multiple variables.
+In this video, let's talk about
+how to fit the parameters of that hypothesis.
+In particular software how to
+use gradient descent for linear
+regression with multiple features.
+To quickly summarize our notation, this
+is our formal hypothesis in multivariable
+linear regression where we've
+adopted the convention that x zero equals one.
+The parameters of this model
+are theta zero through theta
+n, but instead of
+thinking of this as n
+separate parameters, which is
+valued, a mistake into think
+with parameters as theta where
+theta here is a n+1 dimensional vector.
+So I'm just going to think of the parameter.
+The parameters of this
+model as itself being a vector.
+A COS function as J F theta it's zero through theta.
+And it's given by this usual some script.
+Instead of thinking of
+J as a function
+of these and plus one number,
+so I'm going to more
+commonly write J as just
+a function of the parameter
+vector theta so that theta here is a vector.
+Here's what graded descent looks like.
+We're going to repeatedly update each
+parameter theta J according to
+theta J minus alpha times this derivative term.
+And once again we write
+this as J of theta,
+so theta J is updated
+as theta J minus the learning
+rate alpha times the derivative,
+a partial derivative of the
+cos function with respect to
+the parameter theta J. Let's
+see what this looks like when
+we implement gradient descent and
+in particular, let's go see
+what that partial derivative looks like.
+Here's what we have previously for
+gradient descent for We have
+only one feature when N equals one.
+We had two separate update rules
+for the two parameters theta zero
+and theta one and we
+will update theta zero according
+to this equation on top,
+where this term here is
+the partial derivative of the
+cost function with respect to
+with the parameter of theta zero
+and some of them, we had
+an update room for
+theta one and when we
+had only one feature, we
+used to write XI for
+a one feature now of
+course we call this feature
+X subscript one, if we only had one feature.
+So that was the old algorithm for the case of one feature.
+Let's take a look at gradient
+descents for when the number
+of features n may be
+much larger than one.
+Here's what we have for gradient
+descent and for the case of
+when we had N equals one feature.
+We had two separate update rules
+for the parameters theta zero
+and theta one and hopefully, these
+look familiar to you and
+this term here was of
+course, the partial derivative
+of the cost function with respect
+to the parameter of theta 0
+and similarly, we had a
+different update rule for the parameter of theta 1.
+There's a one-rule difference
+which is and when we previously
+had only one feature, we
+would call that feature X I,
+but now in our new
+notation we will of course
+call this X superscript I
+subscript one to denote our one feature.
+So that was for only one feature.
+Let's look at the new algorithm
+for we have more than one
+feature when the number of
+features N may be much larger
+than one.
+We can update for gradient descent and
+maybe for those of you that
+know calculus, if you take
+the definition of the cost function
+and take the partial derivative of
+the cost function J with respect
+to the parameter of theta J,
+you find that that partial derivative
+is exactly that term that
+I've just drawn the blue box
+around, and if you
+implement this you will get
+a working implementation of gradient
+descent for the area to a regression.
+The last thing you wanna do
+on the slide is give you
+a sense of why these
+some new and old
+algorithms are, you know,
+sort of the same thing or why they're
+both similar algorithms and
+why they're both gradient descent algorithms.
+Let's consider a case where we
+have two features, or maybe
+more than two features so we
+have three update rules for
+the parameters theta zero, theta
+one, theta two, and maybe other values of theta as well.
+If you look at the update rule
+for theta zero, what you
+find is that this update
+rule here is the
+same as the update rule
+that we had previously for the case N equals one.
+And the reason that they are
+equivalent is of course
+because in our notation convention
+we had this X0 equals
+1 convention, which is
+why these two terms that after
+one, the magenta of oxes around are equivalent.
+Similarly, if you look at
+the rule for theta one, you
+find that this term here
+is equivalent to the
+term we previously had or
+the equation, the update where
+we previously had for theta
+1 where of course, we're
+just, you know, using this new
+notation x subscript 1
+to denote our new
+notation for denoting the first
+feature and now that
+we have more than one feature,
+we can have similar update
+rules for the other
+parameters like theta two and so on.
+There's a lot going
+on the slide, so I
+definitely encourage you if you
+need to pause the video and
+look at all the map and the
+slide slowly to make sure
+you understand everything that's going
+on here, but if you
+implement the algorithm that
+in written up here then
+you have a working implementation
+of linear regression with multiple features.
