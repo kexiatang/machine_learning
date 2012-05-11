@@ -1,0 +1,17 @@
+underfitting (high bias)
+jist right
+overfitting (high variance)
+
+
+overfitting: fit the training set very well, but fail to generalize to new examples.
+
+
+addressing overfitting
+1. reduce number of features (model selection algorithm or manually)
+2. regularization
+
+
+lamda used to control the trade of between underfitting and overfitting
+
+
+the new partial derivateive of theta looks like shrinking theta towards 0 each time,(trying hard to keep the absolute value of theta small) however the cost function is different, althought they minus the same term, the final optimal point is different.(they are walking along different convex )

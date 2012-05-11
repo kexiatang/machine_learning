@@ -1,0 +1,17 @@
+supervised learning:
+-----------------------
+1.regression 
+	linear regression
+	polynomial regression(can be plug into linear regression)
+2.classification
+	kNN
+	decision tree
+	logistic
+	one-vs-all logistic
+
+
+algorithm: gradient descent or advanced optimizations
+
+
+unsupervised learning
+-----------------------

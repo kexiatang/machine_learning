@@ -1,0 +1,8 @@
+writing in matrix form not only simply code, but more efficient
+
+matrix x matrix can be deem as combination of several matrix x vector
+
+
+why called identity? 1xz = zx1 = z
+
+singlar matrix, degenerate matrix : matrix without inverse
