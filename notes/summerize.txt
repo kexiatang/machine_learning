@@ -8,6 +8,7 @@ supervised learning:
 	decision tree
 	logistic
 	one-vs-all logistic
+	neural network
 
 
 algorithm: gradient descent or advanced optimizations
