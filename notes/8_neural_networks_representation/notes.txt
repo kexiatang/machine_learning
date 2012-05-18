@@ -10,3 +10,5 @@ notice that bias bias unit doesn't contribute to the next layer's bias unit. all
 
 
 neural network is a generalization of logistic regression
+
+feedforward propagation

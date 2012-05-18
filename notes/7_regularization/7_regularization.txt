@@ -5,6 +5,8 @@ overfitting (high variance)
 
 overfitting: fit the training set very well, but fail to generalize to new examples.
 
+by convention we don't penalize theta0, but even it's included in the regularization terms, the solution is similar.
+
 
 addressing overfitting
 1. reduce number of features (model selection algorithm or manually)

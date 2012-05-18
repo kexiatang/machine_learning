@@ -1,0 +1,2 @@
+feedforward propagation is the calculation process
+back propagation is the algorithm to get partial derivatives
