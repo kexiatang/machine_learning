@@ -1,1 +1,0 @@
-high level language are good prototype languages because they need little time to program to see if something works, and then re-implemented in low level language such as c, java to make it faster

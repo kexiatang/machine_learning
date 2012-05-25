@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://share.coursera.org/wiki/index.php/ML:Octave_Tutorial -->
+<html lang="en" dir="ltr" class="client-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ML:Octave Tutorial - Coursera</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.18.1">
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://share.coursera.org/wiki/index.php?title=ML:Octave_Tutorial&action=edit">
+<link rel="edit" title="Edit" href="https://share.coursera.org/wiki/index.php?title=ML:Octave_Tutorial&action=edit">
+<link rel="shortcut icon" href="https://share.coursera.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://share.coursera.org/wiki/opensearch_desc.php" title="Coursera (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://share.coursera.org/wiki/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="Coursera Atom feed" href="https://share.coursera.org/wiki/index.php?title=Special:RecentChanges&feed=atom">
+<link rel="stylesheet" href="https://share.coursera.org/wiki/load.php?debug=false&lang=en&modules=mediawiki.legacy.commonPrint%2Cshared&only=styles&skin=cavendish&*">
+<link rel="stylesheet" href="https://share.coursera.org/wiki/skins/cavendish/print.css?303" media="print">
+<link rel="stylesheet" href="https://share.coursera.org/wiki/skins/cavendish/cavendish.css?303" media="screen">
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/wiki/skins/cavendish/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/wiki/skins/cavendish/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/wiki/skins/cavendish/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/wiki/skins/cavendish/IE70Fixes.css?303" media="screen" /><![endif]-->
+<link rel="stylesheet" href="https://share.coursera.org/wiki/skins/coursera/bootstrap-wrapped.css?303" media="screen"><style>#header h6 a { background: transparent no-repeat; width:322px;height:53px;}</style><style type="text/css" media="all">.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+
+/* cache key: crowdwiki:resourceloader:filter:minify-css:4:4250852ed2349a0d4d0fc6509a3e7d4c */
+</style><style type="text/css" media="all">.js-messagebox{margin:1em 5%;padding:0.5em 2.5%;border:1px solid #ccc;background-color:#fcfcfc;font-size:0.8em}.js-messagebox .js-messagebox-group{margin:1px;padding:0.5em 2.5%;border-bottom:1px solid #ddd}.js-messagebox .js-messagebox-group:last-child{border-bottom:thin none transparent}
+
+/* cache key: crowdwiki:resourceloader:filter:minify-css:4:8b08bdc91c52a9ffba396dccfb5b473c */
+</style><meta name="ResourceLoaderDynamicStyles" content="">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: crowdwiki:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="./ML Octave Tutorial - Coursera_files/load.php"></script><script src="./ML Octave Tutorial - Coursera_files/load(1).php"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "ML", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 518, "wgPageName": "ML:Octave_Tutorial", "wgTitle": "Octave Tutorial", "wgCurRevisionId": 568, "wgArticleId": 71, "wgIsArticle": true, "wgAction": "view", "wgUserName": "S239684", "wgUserGroups": ["*", "user", "autoconfirmed"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script><script type="text/javascript" src="./ML Octave Tutorial - Coursera_files/load(2).php"></script>
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuTitle {background-color: #CCCCCC; margin: -1px -1px 1px -1px; text-align: center; font-style: italic; font-size: 80%; color: #444444; padding: 2px 0; overflow: hidden}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-518 ns-subject page-ML_Octave_Tutorial action-view skin-cavendish"><div id="MathJax_Message" style="display: none; "></div>
+<div id="topbar">
+    <div class="topbar-inner">
+        <div class="container-fluid">
+            <a target="_new" href="http://www.coursera.org/" class="brand">Coursera <span style="background-color:#387690;padding-top:100px" class="label warning">Beta</span></a>
+            <ul class="nav secondary-nav">
+                <li style="padding: 10px 10px 11px; color:#BFBFBF; font-size:14px; border-right: solid 1px #333">Kevin</li>
+                <li><a href="https://www.coursera.org/landing/contact.php">Contact Us</a></li>
+                <li><a href="https://share.coursera.org/wiki/index.php/Special:Contributions/S239684">
+		             My Contributions</a></li>
+                <li><a href="https://share.coursera.org/wiki/index.php?title=Special:UserLogout&returnto=ML%3AOctave+Tutorial">
+		             Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="internal"></div>
+<!-- Skin-Version: 1.2.0 + Coursera -->
+<div id="globalWrapper">
+
+	<div id="p-personal" class="portlet">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+                        			
+			</ul>
+		</div>
+	</div>
+
+	<div id="header">
+		<a name="top" id="contentTop"></a>
+		<h6>
+		<a href="https://share.coursera.org/wiki/index.php/Main_Page" title="Main Page">ML:Octave Tutorial - Coursera</a></h6>
+		<div id="p-cactions" class="portlet"><ul>
+    
+                 <li id="ca-nstab-ml" class="selected"><a href="./ML Octave Tutorial - Coursera_files/ML Octave Tutorial - Coursera.htm">ML</a></li>
+                 <li id="ca-edit"><a href="https://share.coursera.org/wiki/index.php?title=ML:Octave_Tutorial&action=edit" title="You can edit this page. Please use the preview button before saving">Edit</a></li>
+                 <li id="ca-history"><a href="https://share.coursera.org/wiki/index.php?title=ML:Octave_Tutorial&action=history" title="Past revisions of this page">History</a></li>            </ul></div>
+				<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="https://share.coursera.org/wiki/index.php" id="searchform">
+				<input type="hidden" name="title" value="Special:Search">
+				<input type="search" name="search" title="Search Coursera [alt-f]" accesskey="f" id="searchInput">
+				<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton">&nbsp;
+				<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton">
+			</form>
+		</div>
+	</div>
+	</div>
+
+	<div id="mBody">
+	
+		<div id="side">
+			<div id="nav">
+	<div class="generated-sidebar portlet" id="p-Navigation">
+		<h5>Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-mainpage-description"><a href="https://share.coursera.org/wiki/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-recentchanges"><a href="https://share.coursera.org/wiki/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-help"><a href="https://share.coursera.org/wiki/index.php/Help:Editing" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="generated-sidebar portlet" id="p-Courses">
+		<h5>Courses</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-Probabilistic-Graphical-Models"><a href="https://share.coursera.org/wiki/index.php/PGM:Main">Probabilistic Graphical Models</a></li>
+				<li id="n-Computer-Vision:-Fundamentals"><a href="https://share.coursera.org/wiki/index.php/Vision:Main">Computer Vision: Fundamentals</a></li>
+				<li id="n-Introduction-to-Logic"><a href="https://share.coursera.org/wiki/index.php/Intro_Logic:Main">Introduction to Logic</a></li>
+				<li id="n-Machine-Learning"><a href="https://share.coursera.org/wiki/index.php/ML:Main">Machine Learning</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="generated-sidebar portlet" id="p-Contribute">
+		<h5>Contribute</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-Video-Subtitles"><a href="https://share.coursera.org/wiki/index.php/Video_Subtitles">Video Subtitles</a></li>
+				<li id="n-Third-party-Tools"><a href="https://share.coursera.org/wiki/index.php/Third-party_Tools">Third-party Tools</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-upload"><a href="https://share.coursera.org/wiki/index.php/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+		</div><!-- end of SIDE div -->
+		<div id="column-content">
+			<div id="content"><div id="mw-js-message" class="js-messagebox" style="display: none; "></div>
+				<a id="top"></a>
+	        		        	<h1 id="firstHeading" class="firstHeading">ML:Octave Tutorial</h1>
+				<div id="bodyContent">
+		            <h3 id="siteSub">From Coursera</h3>
+		            <div id="contentSub"></div>
+		            		            		            <div id="jump-to-nav">Jump to: <a href="https://share.coursera.org/wiki/index.php/ML:Octave_Tutorial#column-one">navigation</a>, <a href="https://share.coursera.org/wiki/index.php/ML:Octave_Tutorial#searchInput">search</a></div>					<!-- start content -->
+					<div lang="en" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a href="https://share.coursera.org/wiki/index.php/ML:Octave_Tutorial#" class="internal" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1"><a href="https://share.coursera.org/wiki/index.php/ML:Octave_Tutorial#Basic_Operations"><span class="tocnumber">1</span> <span class="toctext">Basic Operations</span></a></li>
+<li class="toclevel-1"><a href="https://share.coursera.org/wiki/index.php/ML:Octave_Tutorial#Moving_Data_Around"><span class="tocnumber">2</span> <span class="toctext">Moving Data Around</span></a></li>
+<li class="toclevel-1"><a href="https://share.coursera.org/wiki/index.php/ML:Octave_Tutorial#Computing_on_Data"><span class="tocnumber">3</span> <span class="toctext">Computing on Data</span></a></li>
+<li class="toclevel-1"><a href="https://share.coursera.org/wiki/index.php/ML:Octave_Tutorial#Plotting_Data"><span class="tocnumber">4</span> <span class="toctext">Plotting Data</span></a></li>
+<li class="toclevel-1"><a href="https://share.coursera.org/wiki/index.php/ML:Octave_Tutorial#Control_statements:_for.2C_while.2C_if_statements"><span class="tocnumber">5</span> <span class="toctext">Control statements: for, while, if statements</span></a></li>
+<li class="toclevel-1"><a href="https://share.coursera.org/wiki/index.php/ML:Octave_Tutorial#Functions"><span class="tocnumber">6</span> <span class="toctext">Functions</span></a></li>
+<li class="toclevel-1"><a href="https://share.coursera.org/wiki/index.php/ML:Octave_Tutorial#Vectorization"><span class="tocnumber">7</span> <span class="toctext">Vectorization</span></a></li>
+<li class="toclevel-1"><a href="https://share.coursera.org/wiki/index.php/ML:Octave_Tutorial#Working_on_and_Submitting_Programming_Exercises"><span class="tocnumber">8</span> <span class="toctext">Working on and Submitting Programming Exercises</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h1> <span class="mw-headline" id="Basic_Operations">Basic Operations</span></h1>
+<code><pre>%% Change Octave prompt  
+PS1('&gt;&gt; ');
+%% Change working directory in windows example:
+cd 'c:/path/to/desired/directory name'
+%% Note that it uses normal slashes and does not uses escape characters for the empty spaces.
+
+%% elementary operations
+5+6
+3-2
+5*8
+1/2
+2^6
+1 == 2 &nbsp;% false
+1 ~= 2 &nbsp;% true.  note, not "!="
+1 &amp;&amp; 0
+1 || 0
+xor(1,0)
+
+
+%% variable assignment
+a = 3;&nbsp;% semicolon suppresses output
+b = 'hi';
+c = 3&gt;=1;
+
+% Displaying them:
+a = pi
+disp(a)
+disp(sprintf('2 decimals:&nbsp;%0.2f', a))
+disp(sprintf('6 decimals:&nbsp;%0.6f', a))
+format long
+a
+format short
+a
+
+
+%%  vectors and matrices
+A = [1 2; 3 4; 5 6]
+
+v = [1 2 3]
+v = [1; 2; 3]
+v = [1:0.1:2] &nbsp;% from 1 to 2, with stepsize of 0.1. Useful for plot axes
+v = 1:6       &nbsp;% from 1 to 6, assumes stepsize of 1 (row vector)
+
+C = 2*ones(2,3) &nbsp;% same as C = [2 2 2; 2 2 2]
+w = ones(1,3)   &nbsp;% 1x3 vector of ones
+w = zeros(1,3)
+w = rand(1,3) &nbsp;% drawn from a uniform distribution 
+w = randn(1,3)&nbsp;% drawn from a normal distribution (mean=0, var=1)
+w = -6 + sqrt(10)*(randn(1,10000)) &nbsp;% (mean = 1, var = 2)
+hist(w)
+I = eye(4)   &nbsp;% 4x4 identity matrix
+
+% help function
+help eye
+help rand
+</pre></code>
+<h1> <span class="mw-headline" id="Moving_Data_Around">Moving Data Around</span></h1>
+<code><pre>%% dimensions
+sz = size(A)
+size(A,1) &nbsp;% number of rows
+size(A,2) &nbsp;% number of cols
+length(v) &nbsp;% size of longest dimension
+
+
+%% loading data
+pwd   &nbsp;% show current directory (current path)
+cd 'C:\Users\ang\Octave files'  &nbsp;% change directory 
+ls    &nbsp;% list files in current directory 
+load q1y.dat
+load q1x.dat
+who   &nbsp;% list variables in workspace
+whos  &nbsp;% list variables in workspace (detailed view) 
+clear q1y      &nbsp;% clear w/ no argt clears all
+v = q1x(1:10);
+save hello v;  &nbsp;% save variable v into file hello.mat
+save hello.txt v -ascii;&nbsp;% save as ascii
+% fopen, fread, fprintf, fscanf also work  [[not needed in class]]
+
+%% indexing
+A(3,2) &nbsp;% indexing is (row,col)
+A(2,:) &nbsp;% get the 2nd row. 
+       &nbsp;% ":" means every element along that dimension
+A(:,2) &nbsp;% get the 2nd col
+A([1 3],:)&nbsp;% print all  the elements of rows 1 and 3
+
+A(:,2) = [10; 11; 12]    &nbsp;% change second column
+A = [A, [100; 101; 102]];&nbsp;% append column vec
+A(:)&nbsp;% Select all elements as a column vector.
+
+% Putting data together 
+A = [A [100; 101; 102]]
+B = [11 12; 13 14; 15 16]&nbsp;% same dims as A
+[A B]
+[A; B] 
+</pre></code>
+<h1> <span class="mw-headline" id="Computing_on_Data">Computing on Data</span></h1>
+<code><pre>%% matrix operations
+A * C &nbsp;% matrix multiplication
+A .* B&nbsp;% element-wise multiplcation
+% A .* C  or A * B gives error - wrong dimensions
+A .^ 2&nbsp;% elementwise multiplication. find the  square  of each element in A
+1./v
+log(v) &nbsp;% functions like this operate element-wise on vecs or matrices 
+exp(v) &nbsp;% e^4
+abs(v)
+
+-v &nbsp;% -1*v
+
+v + ones(1,length(v))
+% v + 1 &nbsp;% same
+
+A' &nbsp;% matrix transpose
+
+%% misc useful functions
+
+% max  (or min)
+a = [1 15 2 0.5]
+val = max(a)
+[val,ind] = max(a)&nbsp;% val -  maximum element of the vector a and index - index value where maximum occur
+
+% find
+a &lt; 3
+find(a &lt; 3)
+A = magic(3)
+[r,c] = find(A&gt;=7)
+
+% sum, prod
+sum(a)
+prod(a)
+floor(a)&nbsp;% or ceil(a)
+max(rand(3),rand(3))
+max(A,[],1)
+min(A,[],2)
+A = magic(9)
+sum(A,1)
+sum(A,2)
+sum(sum( A .* eye(9) ))
+sum(sum( A .* flipud(eye(9)) ))
+
+
+% Matrix inverse (pseudo-inverse)
+pinv(A)       &nbsp;% inv(A'*A)*A'
+</pre></code>
+<h1> <span class="mw-headline" id="Plotting_Data">Plotting Data</span></h1>
+<code><pre>%% plotting
+t = [0:0.01:0.98];
+y1 = sin(2*pi*4*t); 
+plot(t,y1);
+y2 = cos(2*pi*4*t);
+hold on; &nbsp;% "hold off" to turn off
+plot(t,y2,'r');
+xlabel('time');
+ylabel('value');
+legend('sin','cos');
+title('my plot');
+print -dpng 'myPlot.png'
+close;          &nbsp;% or,  "close all" to close all figs
+
+figure(2), clf; &nbsp;% can specify the figure number
+subplot(1,2,1); &nbsp;% Divide plot into 1x2 grid, access 1st element
+plot(t,y1);
+subplot(1,2,2); &nbsp;% Divide plot into 1x2 grid, access 2nd element
+plot(t,y2);
+axis([0.5 1 -1 1]); &nbsp;% change axis scale
+
+%% display a matrix (or image) 
+figure;
+imagesc(magic(15)), colorbar, colormap gray;
+% comma-chaining function calls.  
+a=1,b=2,c=3
+a=1;b=2;c=3;
+</pre></code>
+<h1> <span class="mw-headline" id="Control_statements:_for.2C_while.2C_if_statements">Control statements: <code>for</code>, <code>while</code>, <code>if</code> statements</span></h1>
+<code><pre>v = zeros(10,1);
+for i=1:10, 
+    v(i) = 2^i;
+end
+% Can also use "break" and "continue" inside for and while loops to control execution.
+
+i = 1;
+while i &lt;= 5,
+  v(i) = 100; 
+  i = i+1;
+end
+
+i = 1;
+while true, 
+  v(i) = 999; 
+  i = i+1;
+  if i == 6,
+    break;
+  end;
+end
+
+if v(1)==1,
+  disp('The value is one!');
+elseif v(1)==2,
+  disp('The value is two!');
+else
+  disp('The value is not one or two!');
+end
+</pre></code>
+<h1> <span class="mw-headline" id="Functions">Functions</span></h1>
+<p>To create a function, type the function code in a text editor (e.g. gedit or wordpad), and save the file as "functionName.m" </p>
+<p>To call the function in Octave, do either:</p>
+<p>1) Navigate to the directory of the functionName.m file and call the function:</p>
+<code><pre>   &nbsp;% Navigate to directory:
+    cd /path/to/function
+
+   &nbsp;% Call the function:
+    functionName(args)
+</pre></code>
+<p>2) Add the directory of the function to the load path and save it:</p>
+<code><pre>   &nbsp;% To add the path for the current session of Octave:
+    addpath('/path/to/function/')
+
+   &nbsp;% To remember the path for future sessions of Octave, after executing addpath above, also do:
+    savepath
+</pre></code>
+<h1> <span class="mw-headline" id="Vectorization">Vectorization</span></h1>
+<p>Vectorization is the process of taking code that relies on <strong>loops</strong> and converting it into <strong>matrix operations</strong>. It is more efficient, more elegant, and more concise.</p>
+<p>As an example, let's compute our prediction from a hypothesis. Theta is the vector of fields for the hypothesis and x is a vector of variables.</p>
+<p>With loops:</p>
+<code><pre>prediction = 0.0;
+for j = 1:n+1,
+  prediction += theta(j) * x(j);
+end;
+</pre></code>
+<p>With vectorization:</p>
+<code><pre>prediction = theta' * x;
+</pre></code>
+<p>If you recall the definition multiplying vectors, you'll see that this one operation does the element-wise multiplication and overall sum in a very concise notation.</p>
+<h1> <span class="mw-headline" id="Working_on_and_Submitting_Programming_Exercises">Working on and Submitting Programming Exercises</span></h1>
+<ol>
+<li>Download and extract the assignment's zip file.</li>
+<li>Edit the proper file 'a.m', where a is the name of the exercise you're working on.</li>
+<li>Run octave and cd to the assignment's extracted directory</li>
+<li>Run the 'submit' function and enter the assignment number, your email, and a password (found on the top of the "Programming Exercises" page on coursera)</li>
+</ol>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 83/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key crowdwiki:pcache:idhash:71-0!*!*!!en!*!* and timestamp 20120507181342 -->
+</div><div class="printfooter">
+Retrieved from "<a href="https://share.coursera.org/wiki/index.php?title=ML:Octave_Tutorial&oldid=568">https://share.coursera.org/wiki/index.php?title=ML:Octave_Tutorial&amp;oldid=568</a>"</div>
+					<div id="catlinks" class="catlinks catlinks-allhidden"></div>					<!-- end content -->
+									</div>
+			</div><!-- end of MAINCONTENT div -->	
+		</div>
+	
+	</div><!-- end of MBODY div -->
+	<div class="visualClear"></div>
+	<div id="footer">
+		<table style="width:100%;text-align:center;">
+			<tbody><tr>
+				<td rowspan="2" style="width:5%;text-align:center;vertical-align:top;padding-right:1em;white-space:nowrap">
+						</td>
+				<td align="center">
+			<ul id="f-list">
+					<li id="f-lastmod"> This page was last modified on 6 May 2012, at 08:45.</li>
+					<li id="f-viewcount">This page has been accessed 1,692 times.</li>
+					<li id="f-privacy"><a href="https://share.coursera.org/wiki/index.php/Coursera:Privacy_policy" title="Coursera:Privacy policy">Privacy policy</a></li>
+					<li id="f-about"><a href="https://share.coursera.org/wiki/index.php/Coursera:About" title="Coursera:About">About Coursera</a></li>
+					<li id="f-disclaimer"><a href="https://share.coursera.org/wiki/index.php/Coursera:General_disclaimer" title="Coursera:General disclaimer">Disclaimers</a></li>
+</ul></td>
+				<td rowspan="2" style="width:5%;text-align:center;vertical-align:top;padding-left:1em;white-space:nowrap"><div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="./ML Octave Tutorial - Coursera_files/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki"></a></div></td>
+			</tr>
+			<tr>
+				<td><div id="skin-info">
+					Mozilla Cavendish Theme based on Cavendish style by Gabriel Wicke modified by <a href="http://www.dasch-tour.de/" target="_blank">DaSch</a><br>
+					<a href="http://sourceforge.net/projects/wecowi/">Sourceforge Projectpage</a> – <a href="https://sourceforge.net/apps/trac/wecowi/wiki">Bug Reports</a> – Skin-Version: 1.2.0				</div></td>
+			</tr>
+		</tbody></table>
+	</div><!-- end of the FOOTER div -->
+</div><!-- end of the CONTAINER div -->
+<!-- scripts and debugging information -->
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "mediawiki.action.watch.ajax"]);
+}
+</script><script type="text/javascript" src="./ML Octave Tutorial - Coursera_files/load(3).php"></script>
+<script src="./ML Octave Tutorial - Coursera_files/MathJax.js"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"cavendish","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":true,"searchNs502":true,"searchNs504":true,"searchNs506":true,"searchNs508":true,"searchNs510":true,"searchNs512":true,"searchNs514":true,"searchNs516":true,"searchNs518":true});;mw.user.tokens.set({"editToken":"037ead14a00068a855b8b09b74104e37+\\","watchToken":"547a4612434c50d9aeb6beccdc11e2c8+\\"});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: crowdwiki:resourceloader:filter:minify-js:4:4a092385c964aa372a27e039affde38d */
+}
+</script><!-- Served in 0.067 secs. --></body></html>

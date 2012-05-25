@@ -1,0 +1,13 @@
+feedforward propagation is the calculation process
+back propagation is the algorithm to get partial derivatives
+
+
+2 ways good for debuggin:
+1.plot J(theta) as function of theta to view the curve decreasing
+2.gradient checking
+
+
+
+a * delta is only the gadient for one record. for m recourd, we need to accumulate delta (to get Delta) and dived by m 
+
+delta is actually the partial derivative of cost(i) on z where i is the record number. while z'(x) is a, so J'(theta) is a * delta in case of only one record.

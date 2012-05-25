@@ -1,0 +1,97 @@
+
+In this video, I want to
+just quickly step you through the
+logistics of how to
+work and who work on files and
+use the submission system which
+will let you right away that
+you got the right answer for
+your machine learning program exercise.
+Here's my Octave window, and let's first go to my desktop.
+I saved the files for
+my first exercise, some
+of the files on my desktop.
+This directory, mlclassex1 and
+we provide a number
+files and ask you to edit some of them. So
+the first file should meet
+the detail, pdf file for
+this permanent exercise to get the details.
+But one of the files we also
+edit is this file called
+warm-up exercise, where you
+know the exercise is really just
+to make sure that you're familiar with the submission system.
+And all you need to do is
+return the 5 by 5 identity matrix.
+So, you know, the solution to
+this exercise as I just to show
+you is the right a equals i5 right.
+So that modifies this
+function to generate the 5 by 5 identity matrix.
+And this function warm-up exercise now
+returns, you know, the 5 by 5 identity matrix.
+And I'm just going to save it.
+So I've done the first part of this homework.
+Going back to my octave window.
+Let's now go to my
+directory, Users\ang\Desktop\ml-class-ex1.
+And if I want to make
+sure that I've, you know, implemented this
+in some type warm-up exercise like so.
+And yup, it returns that's
+the 5 by 5 identity matrix that
+we just wrote the code to
+create and I can
+now submit the code as follows.
+I'm going to type submit in
+this directory and I'm ready
+to submit part one so to enter, you know, choice one.
+So last we find email address.
+I'm going across the
+cross website and, you know,
+just list my, this is an external testing site.
+So your version of the website may look a little bit different.
+But that's my email address
+and this is my submission password,
+and I'm just going to type them in here.
+So I have ang@cs.stanford.edu and my
+submission password is 9yC75USsGf.
+
+I'm going to hit
+enter, it connects to the server,
+and submits it, and by
+the way it tells you, you know, it
+says congratulations, you have successfully completed homework part one.
+And this gives you a
+verification that you got this part right.
+And if you don't submit the right
+answer, then, you know, it will
+give you a message indicating that you haven't quite gotten it right.
+And by the way you can
+use this submission
+password and generate a new password.
+It doesn't matter.
+But you can also use your
+regular website login password, but
+because, you know, this password here
+is typed in clear
+text on your monitor we
+gave you this extra submission password
+in case you don't want to
+type in your website's normal
+password onto a window that,
+depending on your operating system,
+this password may or may
+not appear as text when
+you type it into the Octave
+submission script.
+So, that's how you submit the homeworks after you've done it.
+Good luck, and I hope you
+get, when you get around
+to homeworks, I hope you get all of them right.
+And finally, in the next
+and final Octave tutorial video,
+I want to tell you
+about vectorization, which is a
+way to get your Octave code to run much more efficiently.

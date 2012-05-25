@@ -1,0 +1,7 @@
+probability:
+
+bayes law
+conditional probability
+全概率公式（law of total probability）
+
+

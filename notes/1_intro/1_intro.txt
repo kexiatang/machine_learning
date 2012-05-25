@@ -1,9 +1,0 @@
-supervised learning(with training data set): classification(discrete target value), regression(continues target value)
-unsupervised learning(without training data set): clustering
-
-different algorithm lead to different result, so choosing the right algorithm is important.
-
-
-training set -> algorithm -> hypothesis (function)
-
-definition task T, experience E, performance P
