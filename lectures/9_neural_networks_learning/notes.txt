@@ -11,3 +11,22 @@ back propagation is the algorithm to get partial derivatives
 a * delta is only the gadient for one record. for m recourd, we need to accumulate delta (to get Delta) and dived by m 
 
 delta is actually the partial derivative of cost(i) on z where i is the record number. while z'(x) is a, so J'(theta) is a * delta in case of only one record.
+
+
+epsilon 10e-4 is good, because if big, not accurate, if too small, underflow problem.
+
+one-side difference estimate is not as good as two-sides difference
+
+
+symmetry breaking
+
+
+
+put it together
+---------------
+default 1 hidden layer
+if n hidden layer, each layer has same numbre of unit (reasonalble default)
+the more hidden unit the better (given complexity permit) usually comparable with number of features
+
+
+J(theta) is NOT convex, we only can get local optimum, but it's fine here.
