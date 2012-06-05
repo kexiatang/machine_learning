@@ -30,3 +30,5 @@ the more hidden unit the better (given complexity permit) usually comparable wit
 
 
 J(theta) is NOT convex, we only can get local optimum, but it's fine here.
+
+Notice that in ex3, oneVsAll.m we minimize J(theta) for each logistic regression seperately, but in neural networks we calculate J(theta) as a whole. if we treat multi-logistic classifier as a simple neural network of 2 layers, then if each logistic regression is optimized then the whole cost is minimized for sure. but in a general neural network all thetas are mutually dependent except the last layer, so we need to conisder overall effect as a whole.

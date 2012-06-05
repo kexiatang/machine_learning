@@ -17,3 +17,5 @@ lamda used to control the trade of between underfitting and overfitting
 
 
 the new partial derivateive of theta looks like shrinking theta towards 0 each time,(trying hard to keep the absolute value of theta small) however the cost function is different, althought they minus the same term, the final optimal point is different.(they are walking along different convex )
+
+note: a negative lambda won't necessarily provide overfitting, theta could also be decreased (look into the formula and think)

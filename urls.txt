@@ -3,6 +3,11 @@ http://ianma.wordpress.com/2009/07/19/machine-learning-for-beginners/
 http://blog.siyelo.com/machine-learning-in-ruby-statistic-classifica
 
 http://www.igvita.com/2007/04/16/decision-tree-learning-in-ruby/
+http://www.igvita.com/2007/05/23/bayes-classification-in-ruby/
 
 http://openclassroom.stanford.edu
 http://openclassroom.stanford.edu/MainFolder/VideoPage.php?course=ufldl&video=02.4-LogisticRegression-StochasticGradientDescent&speed=
+
+
+
+http://people.csail.mit.edu/jrennie/20Newsgroups/ 
