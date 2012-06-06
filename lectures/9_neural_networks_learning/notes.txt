@@ -32,3 +32,27 @@ the more hidden unit the better (given complexity permit) usually comparable wit
 J(theta) is NOT convex, we only can get local optimum, but it's fine here.
 
 Notice that in ex3, oneVsAll.m we minimize J(theta) for each logistic regression seperately, but in neural networks we calculate J(theta) as a whole. if we treat multi-logistic classifier as a simple neural network of 2 layers, then if each logistic regression is optimized then the whole cost is minimized for sure. but in a general neural network all thetas are mutually dependent except the last layer, so we need to conisder overall effect as a whole.
+
+
+----------------------
+all-0 theta initalization will cause all the unit in the output layer to be the same therefore has the same probability for every class. even it gets a local minimum finally, the result in the output layer is still equally-likely for each class, that's why the accuracy will be low. this local minimum is undesired.
+
+
+epsilon: for gradient checking, 10e-4, for random initialization, refer to the formular in ex4.
+
+for details about gradient checking check ex4
+
+in ex4, pay attention that visualize hidden layer is actually visualise theta, becase that's the weight for each pixel. and it has totally different meaning from the visualization of X
+
+think about a 2 layer network this way: as the min cost is got, the result theta will try best to predict the number as it is. so for number 1, the theta that multiplicating the pixel values of 1 will be large so that z will be large for that class in order to get an output close to 1. so for those characteristic pixels of number 1, theta value will be high.
+
+what does activate a hidden unit mean.
+
+try to change 
+displayData(Theta1(:, 2:end) );
+to
+displayData(Theta1(:, 2:end) .* (ones(25,1) * X(1000,:)) );
+
+to see what happen. thus better understand why visualize theta as detectors.
+
+also try disable random initalization, may find that all image will be the same.
