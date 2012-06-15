@@ -1,0 +1,1020 @@
+
+1
+00:00:00,006 --> 00:00:01,052
+matrix multiplication is really
+
+2
+00:00:01,088 --> 00:00:02,083
+useful since you can pack
+
+3
+00:00:03,027 --> 00:00:05,013
+a lot of computation into just
+
+4
+00:00:05,046 --> 00:00:06,079
+one matrix multiplication operation.
+
+5
+00:00:08,010 --> 00:00:10,006
+But you should be careful of how you use them.
+
+6
+00:00:10,080 --> 00:00:11,098
+In this video I want to
+
+7
+00:00:12,008 --> 00:00:14,041
+tell you about a few properties of matrix multiplication.
+
+8
+00:00:18,032 --> 00:00:19,053
+When working with just raw
+
+9
+00:00:19,067 --> 00:00:20,092
+numbers or when working with
+
+10
+00:00:21,064 --> 00:00:25,012
+scalars, multiplication is commutative.
+
+11
+00:00:26,001 --> 00:00:27,008
+And what I mean by that is
+
+12
+00:00:27,044 --> 00:00:29,001
+if you take three times
+
+13
+00:00:29,026 --> 00:00:30,055
+five, that is equal
+
+14
+00:00:30,083 --> 00:00:32,006
+to five times three and
+
+15
+00:00:32,038 --> 00:00:34,034
+the ordering of this multiplication doesn't matter.
+
+16
+00:00:35,031 --> 00:00:36,084
+And this is called the commutative
+
+17
+00:00:38,025 --> 00:00:41,028
+property of multiplication of real numbers.
+
+18
+00:00:42,014 --> 00:00:43,057
+It turns out this property that
+
+19
+00:00:43,077 --> 00:00:44,072
+you can, you know, reverse
+
+20
+00:00:45,031 --> 00:00:46,024
+the order in which you
+
+21
+00:00:46,029 --> 00:00:48,093
+multiply things, this is not true for matrix multiplication.So
+
+22
+00:00:50,025 --> 00:00:52,014
+concretely, if A and
+
+23
+00:00:52,024 --> 00:00:53,029
+B are matrices, then in
+
+24
+00:00:53,039 --> 00:00:54,092
+general, A times B is
+
+25
+00:00:55,011 --> 00:00:56,032
+not equal to B times
+
+26
+00:00:56,064 --> 00:00:58,002
+A.  So just be careful of that.
+
+27
+00:00:58,017 --> 00:01:00,013
+It's not okay to arbitrarily reverse
+
+28
+00:01:00,054 --> 00:01:01,096
+the order in which you are multiplying matrices.
+
+29
+00:01:02,049 --> 00:01:03,082
+So, we say that matrix multiplication
+
+30
+00:01:04,079 --> 00:01:06,021
+is not commutative, it's a fancy
+
+31
+00:01:06,040 --> 00:01:08,048
+way of saying it.
+
+32
+00:01:09,056 --> 00:01:12,020
+As a concrete example, here
+
+33
+00:01:12,029 --> 00:01:13,010
+are two matrices, matrix 1100
+
+34
+00:01:13,012 --> 00:01:13,082
+times 0020, and if you multiply
+
+35
+00:01:14,029 --> 00:01:16,010
+these two matrices, you get this result on the right.
+
+36
+00:01:17,001 --> 00:01:19,089
+Now, let's swap around the order of these two matrices.
+
+37
+00:01:20,045 --> 00:01:21,057
+So, I'm going to take these
+
+38
+00:01:21,079 --> 00:01:23,048
+two matrices and just reverse them.
+
+39
+00:01:24,025 --> 00:01:25,007
+It turns out if you multiply
+
+40
+00:01:25,051 --> 00:01:27,006
+these two matrices, you get
+
+41
+00:01:27,062 --> 00:01:29,034
+the second answer on the
+
+42
+00:01:29,043 --> 00:01:31,043
+right and, you know, real
+
+43
+00:01:32,009 --> 00:01:33,039
+clearly, these two matrices are
+
+44
+00:01:33,062 --> 00:01:35,012
+not equal to each other.
+
+45
+00:01:36,073 --> 00:01:37,098
+So, in fact, in
+
+46
+00:01:38,014 --> 00:01:39,012
+general, if you have
+
+47
+00:01:39,012 --> 00:01:40,079
+a matrix operation like
+
+48
+00:01:41,056 --> 00:01:44,026
+A times B. If A
+
+49
+00:01:44,079 --> 00:01:46,043
+is an m by n matrix
+
+50
+00:01:47,046 --> 00:01:48,087
+and B is an by
+
+51
+00:01:49,020 --> 00:01:51,000
+M matrix, just as an example.
+
+52
+00:01:52,043 --> 00:01:53,062
+Then, it turns out
+
+53
+00:01:53,098 --> 00:01:55,075
+that the matrix A times
+
+54
+00:01:56,070 --> 00:01:58,075
+B right, is going
+
+55
+00:01:59,001 --> 00:02:00,092
+to be an m by
+
+56
+00:02:01,028 --> 00:02:03,053
+m matrix, where as
+
+57
+00:02:03,076 --> 00:02:05,020
+the matrix b x a
+
+58
+00:02:06,045 --> 00:02:08,038
+is going to be an n
+
+59
+00:02:08,044 --> 00:02:09,078
+by n matrix so the
+
+60
+00:02:09,088 --> 00:02:11,015
+dimensions don't even match, right,
+
+61
+00:02:11,040 --> 00:02:13,015
+so A times B and
+
+62
+00:02:13,028 --> 00:02:15,037
+B times A may not even be the same dimension.
+
+63
+00:02:16,068 --> 00:02:17,040
+In the example on the left,
+
+64
+00:02:17,059 --> 00:02:18,047
+I have all two by two matrices,
+
+65
+00:02:19,021 --> 00:02:19,087
+so the dimensions were the same,
+
+66
+00:02:20,027 --> 00:02:22,034
+but in general reversing the
+
+67
+00:02:22,065 --> 00:02:24,009
+order of the matrices
+
+68
+00:02:25,031 --> 00:02:26,027
+can even change the dimension
+
+69
+00:02:27,024 --> 00:02:29,022
+of the outcome so
+
+70
+00:02:30,000 --> 00:02:31,065
+matrix multiplication is not commutative.
+
+71
+00:02:34,031 --> 00:02:35,063
+Here's the next I want to talk about.
+
+72
+00:02:36,028 --> 00:02:37,053
+So, when talking about real
+
+73
+00:02:37,068 --> 00:02:39,050
+numbers, or scalars, let's
+
+74
+00:02:39,068 --> 00:02:42,028
+see, I have 3 times 5 times 2.
+
+75
+00:02:42,086 --> 00:02:45,013
+I can either multiply 5
+
+76
+00:02:45,081 --> 00:02:47,043
+times 2 first, and
+
+77
+00:02:47,053 --> 00:02:49,084
+I can compute this as 3 times 10.
+
+78
+00:02:50,043 --> 00:02:51,049
+Or, I can multiply
+
+79
+00:02:52,091 --> 00:02:54,041
+three times five for us and
+
+80
+00:02:54,062 --> 00:02:55,065
+I can compute this as, you
+
+81
+00:02:55,078 --> 00:02:57,086
+know fifteen times two and
+
+82
+00:02:58,002 --> 00:02:59,050
+both of these give you the same answer, right?
+
+83
+00:02:59,084 --> 00:03:00,072
+Each, both of these is equal
+
+84
+00:03:01,006 --> 00:03:03,071
+to thirty so Whether I
+
+85
+00:03:03,090 --> 00:03:06,011
+multiply five times
+
+86
+00:03:06,040 --> 00:03:07,096
+two first or whether I
+
+87
+00:03:08,016 --> 00:03:09,050
+multiply three times five
+
+88
+00:03:09,074 --> 00:03:12,034
+first because well, three
+
+89
+00:03:12,062 --> 00:03:13,087
+times five times two
+
+90
+00:03:14,066 --> 00:03:16,002
+is equal to three times
+
+91
+00:03:16,033 --> 00:03:17,093
+five times two.
+
+92
+00:03:18,087 --> 00:03:20,003
+And this is called the
+
+93
+00:03:20,041 --> 00:03:25,075
+associative property of role number multiplication.
+
+94
+00:03:27,002 --> 00:03:29,047
+It turns out that matrix multiplication is associative.
+
+95
+00:03:30,068 --> 00:03:32,015
+So concretely, let's say
+
+96
+00:03:32,028 --> 00:03:33,018
+I have a product of three
+
+97
+00:03:33,041 --> 00:03:34,046
+matrices, A times B times
+
+98
+00:03:34,075 --> 00:03:36,002
+C. Then I can
+
+99
+00:03:36,016 --> 00:03:37,068
+compute this either as A
+
+100
+00:03:37,084 --> 00:03:40,071
+times, B times C
+
+101
+00:03:41,046 --> 00:03:42,053
+or I can compute this as
+
+102
+00:03:42,078 --> 00:03:45,031
+A times B, times C
+
+103
+00:03:45,071 --> 00:03:47,053
+and these will actually give me the same answer.
+
+104
+00:03:48,011 --> 00:03:49,011
+I'm not going to prove this, but
+
+105
+00:03:49,027 --> 00:03:51,031
+you can just take my word for it, I guess.
+
+106
+00:03:51,053 --> 00:03:52,040
+So just be clear what I mean by
+
+107
+00:03:52,065 --> 00:03:54,013
+these two cases, let's look
+
+108
+00:03:54,027 --> 00:03:55,093
+at first one first case.
+
+109
+00:03:56,027 --> 00:03:57,012
+What I mean by that is
+
+110
+00:03:57,030 --> 00:03:58,021
+if you actually want to compute
+
+111
+00:03:58,036 --> 00:03:59,074
+A times B times C, what
+
+112
+00:03:59,090 --> 00:04:00,081
+you can do is you can
+
+113
+00:04:01,040 --> 00:04:02,077
+first compute B times C.
+
+114
+00:04:03,009 --> 00:04:04,009
+So that D equals B time
+
+115
+00:04:04,040 --> 00:04:05,050
+C, then compute A times
+
+116
+00:04:05,083 --> 00:04:06,084
+D.  And so this is really
+
+117
+00:04:07,019 --> 00:04:09,038
+computing a times B
+
+118
+00:04:09,055 --> 00:04:12,015
+times C.  Or, for
+
+119
+00:04:12,043 --> 00:04:14,071
+this second case, You can
+
+120
+00:04:14,087 --> 00:04:15,084
+compute this as, you can
+
+121
+00:04:16,000 --> 00:04:17,055
+set E equals A
+
+122
+00:04:17,068 --> 00:04:19,005
+times B.  Then compute E
+
+123
+00:04:19,010 --> 00:04:20,055
+times C.  And this
+
+124
+00:04:20,075 --> 00:04:22,042
+is then the same as a
+
+125
+00:04:22,092 --> 00:04:24,087
+times B times C
+
+126
+00:04:25,052 --> 00:04:27,006
+and it turns out that both
+
+127
+00:04:27,031 --> 00:04:29,089
+of these options will give
+
+128
+00:04:30,010 --> 00:04:32,043
+you, is guaranteed to give you the same answer.
+
+129
+00:04:33,066 --> 00:04:34,073
+And so we say that matrix
+
+130
+00:04:35,011 --> 00:04:38,043
+multiplication does enjoy the associative property.
+
+131
+00:04:40,076 --> 00:04:40,076
+Okay?
+
+132
+00:04:41,000 --> 00:04:42,025
+And don't worry about the terminology
+
+133
+00:04:42,072 --> 00:04:45,006
+associative and commutative that's
+
+134
+00:04:45,024 --> 00:04:46,008
+why there's not really going to use
+
+135
+00:04:46,016 --> 00:04:46,093
+this terminology later in these
+
+136
+00:04:47,052 --> 00:04:49,010
+class, so don't worry about memorizing those terms.
+
+137
+00:04:50,086 --> 00:04:52,061
+Finally, I want to
+
+138
+00:04:52,080 --> 00:04:53,088
+tell you about the identity
+
+139
+00:04:54,018 --> 00:04:55,043
+matrix, which is special matrix.
+
+140
+00:04:56,066 --> 00:04:57,091
+So let's again make the
+
+141
+00:04:58,020 --> 00:04:59,005
+analogy to what we know
+
+142
+00:04:59,029 --> 00:05:01,005
+of raw numbers, so when dealing
+
+143
+00:05:01,033 --> 00:05:02,035
+with raw numbers or scalar
+
+144
+00:05:02,079 --> 00:05:04,010
+numbers, the number one,
+
+145
+00:05:04,056 --> 00:05:05,089
+is you can think
+
+146
+00:05:06,012 --> 00:05:08,050
+of it as the identity of multiplication,
+
+147
+00:05:09,081 --> 00:05:10,052
+and what I mean by that
+
+148
+00:05:10,082 --> 00:05:12,026
+is for any number
+
+149
+00:05:12,087 --> 00:05:14,085
+Z, the number 1
+
+150
+00:05:14,094 --> 00:05:16,048
+times z is equal
+
+151
+00:05:16,081 --> 00:05:19,060
+to z times one, and
+
+152
+00:05:19,073 --> 00:05:21,035
+that's just equal to
+
+153
+00:05:21,050 --> 00:05:24,024
+the number z, right, for any raw number.
+
+154
+00:05:24,050 --> 00:05:26,001
+Z. So 1 is
+
+155
+00:05:26,008 --> 00:05:28,086
+the identity operation and so it satisfies this equation.
+
+156
+00:05:29,089 --> 00:05:31,017
+So it turns out that
+
+157
+00:05:31,069 --> 00:05:32,081
+in the space of matrices as
+
+158
+00:05:33,026 --> 00:05:35,012
+an identity matrix as well.
+
+159
+00:05:35,043 --> 00:05:37,099
+And it's unusually denoted i,
+
+160
+00:05:38,037 --> 00:05:39,044
+or sometimes we write it
+
+161
+00:05:39,056 --> 00:05:40,052
+as i of n by
+
+162
+00:05:40,097 --> 00:05:42,031
+n we want to make explicit the dimensions.
+
+163
+00:05:43,001 --> 00:05:44,013
+So I subscript n by n
+
+164
+00:05:44,029 --> 00:05:46,058
+is the n by n identity matrix.
+
+165
+00:05:47,075 --> 00:05:48,076
+And so there's a different identity
+
+166
+00:05:49,032 --> 00:05:52,036
+matrix for each dimension n and are a few examples.
+
+167
+00:05:53,041 --> 00:05:54,044
+Here's the two by two identity
+
+168
+00:05:54,089 --> 00:05:56,017
+matrix, here's the three
+
+169
+00:05:56,039 --> 00:05:58,079
+by three identity matrix, here's the four by four identity matrix.
+
+170
+00:05:59,082 --> 00:06:01,075
+So the identity matrix, has the
+
+171
+00:06:01,082 --> 00:06:03,013
+property that it has
+
+172
+00:06:03,056 --> 00:06:04,061
+ones along the diagonals,
+
+173
+00:06:07,062 --> 00:06:09,093
+right, and so on and
+
+174
+00:06:10,031 --> 00:06:12,069
+is zero everywhere else, and
+
+175
+00:06:12,088 --> 00:06:13,092
+so, by the way the
+
+176
+00:06:14,000 --> 00:06:17,004
+one by one identity matrix is just a number one.
+
+177
+00:06:17,038 --> 00:06:18,013
+This is one by one matrix
+
+178
+00:06:18,074 --> 00:06:19,088
+just and it's not a very
+
+179
+00:06:20,006 --> 00:06:21,094
+interesting identity matrix and informally
+
+180
+00:06:23,047 --> 00:06:24,026
+when I or others are being
+
+181
+00:06:24,061 --> 00:06:26,030
+sloppy, very often, we will
+
+182
+00:06:26,038 --> 00:06:28,017
+write the identity matrix using fine notation.
+
+183
+00:06:28,087 --> 00:06:30,022
+I draw, you know, let's
+
+184
+00:06:30,062 --> 00:06:31,049
+go back to it and just write 1111,
+
+185
+00:06:31,062 --> 00:06:33,018
+dot, dot, dot, 1
+
+186
+00:06:33,050 --> 00:06:34,058
+and then we'll, maybe, somewhat
+
+187
+00:06:34,093 --> 00:06:36,085
+sloppily write a bunch of zeros there.
+
+188
+00:06:37,066 --> 00:06:39,075
+And these zeros, this
+
+189
+00:06:40,073 --> 00:06:41,072
+big zero, this big zero
+
+190
+00:06:42,047 --> 00:06:44,000
+that's meant to denote that this
+
+191
+00:06:44,024 --> 00:06:46,001
+matrix is zero everywhere except for
+
+192
+00:06:46,013 --> 00:06:47,008
+the diagonals, so this is just
+
+193
+00:06:47,029 --> 00:06:48,087
+how I might sloppily write
+
+194
+00:06:49,067 --> 00:06:53,019
+this identity matrix
+
+195
+00:06:53,022 --> 00:06:55,000
+She says property that for
+
+196
+00:06:55,011 --> 00:06:57,017
+any matrix A, A times
+
+197
+00:06:57,045 --> 00:06:58,081
+identity i times A
+
+198
+00:06:59,066 --> 00:07:00,062
+A. So that's a lot
+
+199
+00:07:00,082 --> 00:07:03,027
+like this equation that we have up here.
+
+200
+00:07:05,031 --> 00:07:06,024
+One times z equals z times
+
+201
+00:07:06,048 --> 00:07:07,075
+one, equals z itself so
+
+202
+00:07:08,043 --> 00:07:09,087
+I times A equals A
+
+203
+00:07:09,097 --> 00:07:12,031
+times I equals A.  Just
+
+204
+00:07:12,056 --> 00:07:13,091
+make sure we have the dimensions right, so
+
+205
+00:07:14,006 --> 00:07:15,049
+if A is a n
+
+206
+00:07:15,070 --> 00:07:17,064
+by n matrix, then this
+
+207
+00:07:18,007 --> 00:07:19,066
+identity matrix that's an
+
+208
+00:07:19,093 --> 00:07:21,051
+m by n identity matrix.
+
+209
+00:07:23,025 --> 00:07:24,025
+And if A is m by
+
+210
+00:07:24,052 --> 00:07:25,081
+n then this identity
+
+211
+00:07:26,056 --> 00:07:27,092
+matrix, right, for matrix
+
+212
+00:07:28,072 --> 00:07:30,006
+multiplication make sense that has a
+
+213
+00:07:30,029 --> 00:07:32,050
+m by n matrix because
+
+214
+00:07:32,098 --> 00:07:34,008
+this m has a match
+
+215
+00:07:34,029 --> 00:07:36,061
+up that m And
+
+216
+00:07:36,092 --> 00:07:38,005
+in either case the outcome
+
+217
+00:07:38,058 --> 00:07:39,094
+of this process is you
+
+218
+00:07:40,000 --> 00:07:41,083
+get back to Matrix A, which
+
+219
+00:07:42,002 --> 00:07:43,067
+is m by n.
+
+220
+00:07:44,052 --> 00:07:45,075
+So whenever we write
+
+221
+00:07:46,002 --> 00:07:47,058
+the identity matrix I, you
+
+222
+00:07:47,067 --> 00:07:50,008
+know, very often the dimension rightwill
+
+223
+00:07:50,081 --> 00:07:51,075
+be implicit from the context.
+
+224
+00:07:52,045 --> 00:07:53,048
+So these two I's they' re
+
+225
+00:07:53,064 --> 00:07:55,045
+actually different dimension matrices, one
+
+226
+00:07:55,062 --> 00:07:56,062
+may be N by N, the other
+
+227
+00:07:56,077 --> 00:07:58,080
+is M by M But when
+
+228
+00:07:58,095 --> 00:07:59,092
+we want to make the dimension
+
+229
+00:08:00,050 --> 00:08:02,039
+of the matrix explicit, then sometimes
+
+230
+00:08:02,083 --> 00:08:03,095
+we'll write to this I subscript
+
+231
+00:08:04,048 --> 00:08:06,026
+N by N, kind of like we have up here.
+
+232
+00:08:06,043 --> 00:08:08,010
+But very often the dimension will be implicit.
+
+233
+00:08:10,004 --> 00:08:11,018
+Finally, just want to point
+
+234
+00:08:11,049 --> 00:08:14,036
+out that earlier I
+
+235
+00:08:14,056 --> 00:08:16,012
+said that A times B
+
+236
+00:08:16,043 --> 00:08:18,069
+is not in general equal
+
+237
+00:08:19,005 --> 00:08:21,098
+to B times A, right?
+
+238
+00:08:22,058 --> 00:08:25,000
+That for most matrices A and B, this is not true.
+
+239
+00:08:25,068 --> 00:08:28,064
+But when B is the identity matrix, this does hold true.
+
+240
+00:08:29,057 --> 00:08:30,063
+That A times the identity
+
+241
+00:08:30,087 --> 00:08:32,099
+matrix does indeed equal to
+
+242
+00:08:33,034 --> 00:08:34,039
+identity times A, it's
+
+243
+00:08:34,045 --> 00:08:35,051
+just that this is not true
+
+244
+00:08:35,080 --> 00:08:37,076
+for other matrices, B in general.
+
+245
+00:08:39,089 --> 00:08:41,025
+So that's it for the
+
+246
+00:08:41,062 --> 00:08:43,003
+properties of matrix multiplication.
+
+247
+00:08:43,097 --> 00:08:45,016
+And the special matrices, like the
+
+248
+00:08:45,038 --> 00:08:46,050
+identity matrix I want to
+
+249
+00:08:46,055 --> 00:08:48,012
+tell you about, in the next
+
+250
+00:08:48,049 --> 00:08:50,088
+and final video now linear algebra review.
+
+251
+00:08:51,065 --> 00:08:53,005
+I am going to quickly tell you
+
+252
+00:08:53,035 --> 00:08:55,030
+about a couple of special
+
+253
+00:08:55,083 --> 00:08:57,078
+matrix operations, and after
+
+254
+00:08:58,017 --> 00:08:59,019
+that you know everything you need
+
+255
+00:08:59,025 --> 00:09:01,083
+to know about linear algebra for this course

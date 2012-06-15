@@ -1,0 +1,1280 @@
+
+1
+00:00:00,031 --> 00:00:01,054
+In this video, I want to
+
+2
+00:00:01,059 --> 00:00:02,070
+tell you about a couple of special
+
+3
+00:00:02,087 --> 00:00:04,074
+matrix operations, called the
+
+4
+00:00:04,083 --> 00:00:07,042
+matrix inverse and the matrix transpose operation.
+
+5
+00:00:08,074 --> 00:00:09,082
+Let's start by talking about matrix
+
+6
+00:00:10,031 --> 00:00:12,082
+inverse, and as
+
+7
+00:00:12,093 --> 00:00:14,026
+usual we'll start by thinking about
+
+8
+00:00:14,050 --> 00:00:15,091
+how it relates to raw numbers.
+
+9
+00:00:17,028 --> 00:00:18,048
+In the last video, I said
+
+10
+00:00:18,078 --> 00:00:20,041
+that the number one plays the
+
+11
+00:00:20,057 --> 00:00:24,037
+role of the identity in
+
+12
+00:00:24,058 --> 00:00:25,069
+the space of raw numbers because
+
+13
+00:00:26,007 --> 00:00:27,082
+one times anything is equal to itself.
+
+14
+00:00:28,085 --> 00:00:29,067
+It turns out that raw numbers
+
+15
+00:00:30,023 --> 00:00:31,035
+have this property that very
+
+16
+00:00:31,060 --> 00:00:32,096
+number have an, that
+
+17
+00:00:33,011 --> 00:00:34,004
+each number has an inverse,
+
+18
+00:00:34,059 --> 00:00:36,015
+for example, given the number
+
+19
+00:00:36,065 --> 00:00:38,028
+three, there exists some
+
+20
+00:00:38,047 --> 00:00:40,003
+number, which happens to
+
+21
+00:00:40,010 --> 00:00:41,039
+be three inverse so that
+
+22
+00:00:41,052 --> 00:00:43,065
+that number times gives you
+
+23
+00:00:43,078 --> 00:00:45,054
+back the identity element one.
+
+24
+00:00:46,047 --> 00:00:49,045
+And so to me, inverse of course this is just one third.
+
+25
+00:00:50,071 --> 00:00:51,089
+And given some other number,
+
+26
+00:00:53,039 --> 00:00:55,015
+maybe twelve there is
+
+27
+00:00:55,035 --> 00:00:56,082
+some number which is the
+
+28
+00:00:57,034 --> 00:00:58,090
+inverse of twelve written as
+
+29
+00:00:59,045 --> 00:01:01,020
+twelve to the minus one, or
+
+30
+00:01:01,047 --> 00:01:02,072
+really this is just one twelve.
+
+31
+00:01:04,009 --> 00:01:05,062
+So that when you multiply these two things together.
+
+32
+00:01:07,004 --> 00:01:08,040
+the product is equal to
+
+33
+00:01:09,026 --> 00:01:10,089
+the identity element one again.
+
+34
+00:01:12,037 --> 00:01:13,070
+Now it turns out that in
+
+35
+00:01:13,085 --> 00:01:16,040
+the space of raw numbers, not everything has an inverse.
+
+36
+00:01:17,006 --> 00:01:18,040
+For example the number zero
+
+37
+00:01:19,015 --> 00:01:20,034
+does not have an inverse, right?
+
+38
+00:01:20,095 --> 00:01:24,020
+Because zero's a zero inverse, one over zero that's undefined.
+
+39
+00:01:25,045 --> 00:01:28,040
+Like this one over zero is not well defined.
+
+40
+00:01:30,009 --> 00:01:31,004
+And what we want to
+
+41
+00:01:31,045 --> 00:01:32,032
+do, in the rest of this
+
+42
+00:01:32,042 --> 00:01:33,065
+slide, is figure out what does
+
+43
+00:01:33,078 --> 00:01:36,090
+it mean to compute the inverse of a matrix.
+
+44
+00:01:39,073 --> 00:01:41,040
+Here's the idea: If
+
+45
+00:01:41,075 --> 00:01:42,089
+A is a end by
+
+46
+00:01:43,020 --> 00:01:44,093
+end matrix, and it
+
+47
+00:01:45,004 --> 00:01:46,031
+has an inverse, I will say
+
+48
+00:01:46,034 --> 00:01:47,081
+a bit more about that later, then
+
+49
+00:01:48,048 --> 00:01:49,065
+the inverse is going to
+
+50
+00:01:49,089 --> 00:01:51,056
+be written A to the
+
+51
+00:01:51,065 --> 00:01:53,054
+minus one and A
+
+52
+00:01:54,034 --> 00:01:55,065
+times this inverse, A to
+
+53
+00:01:55,076 --> 00:01:56,082
+the minus one, is going to
+
+54
+00:01:57,004 --> 00:01:58,098
+equal to A inverse times
+
+55
+00:01:59,032 --> 00:02:00,051
+A, is going to
+
+56
+00:02:00,068 --> 00:02:02,015
+give us back the identity matrix.
+
+57
+00:02:03,001 --> 00:02:03,001
+Okay?
+
+58
+00:02:04,095 --> 00:02:06,095
+Only matrices that are
+
+59
+00:02:07,006 --> 00:02:09,034
+m by m for some the idea of M having inverse.
+
+60
+00:02:09,087 --> 00:02:11,043
+So, a matrix is
+
+61
+00:02:11,065 --> 00:02:12,061
+M by M, this is also
+
+62
+00:02:13,003 --> 00:02:15,084
+called a square matrix and
+
+63
+00:02:16,003 --> 00:02:17,072
+it's called square because
+
+64
+00:02:18,018 --> 00:02:23,030
+the number of rows is equal to the number of columns.
+
+65
+00:02:25,036 --> 00:02:26,027
+Right and it turns out
+
+66
+00:02:26,053 --> 00:02:28,078
+only square matrices have inverses,
+
+67
+00:02:29,052 --> 00:02:30,081
+so A is a square
+
+68
+00:02:30,097 --> 00:02:32,005
+matrix, is m by m,
+
+69
+00:02:33,002 --> 00:02:36,046
+on inverse this equation over here.
+
+70
+00:02:37,034 --> 00:02:38,022
+Let's look at a concrete example,
+
+71
+00:02:39,074 --> 00:02:41,053
+so let's say I
+
+72
+00:02:41,058 --> 00:02:44,049
+have a matrix, three, four,
+
+73
+00:02:45,012 --> 00:02:47,008
+two, sixteen.
+
+74
+00:02:48,030 --> 00:02:49,034
+So this is a two by
+
+75
+00:02:49,053 --> 00:02:51,068
+two matrix, so it's
+
+76
+00:02:51,081 --> 00:02:52,099
+a square matrix and so this
+
+77
+00:02:53,015 --> 00:02:55,018
+may just could have an and
+
+78
+00:02:55,047 --> 00:02:56,061
+it turns out that I
+
+79
+00:02:57,075 --> 00:02:58,096
+happen to know the inverse
+
+80
+00:02:59,031 --> 00:03:00,061
+of this matrix is zero point
+
+81
+00:03:00,084 --> 00:03:02,046
+four, minus zero point
+
+82
+00:03:02,066 --> 00:03:04,027
+one, minus zero point
+
+83
+00:03:04,052 --> 00:03:07,040
+zero five, zero zero seven five.
+
+84
+00:03:08,075 --> 00:03:09,059
+And if I take this matrix
+
+85
+00:03:10,024 --> 00:03:12,015
+and multiply these together it
+
+86
+00:03:12,025 --> 00:03:13,006
+turns out what I get
+
+87
+00:03:13,062 --> 00:03:15,037
+is the two by
+
+88
+00:03:15,056 --> 00:03:17,077
+two identity matrix, I,
+
+89
+00:03:18,034 --> 00:03:19,084
+this is I two by two.
+
+90
+00:03:20,046 --> 00:03:20,046
+Okay?
+
+91
+00:03:20,099 --> 00:03:22,019
+And so on this slide,
+
+92
+00:03:22,030 --> 00:03:24,016
+you know this matrix is
+
+93
+00:03:24,036 --> 00:03:27,003
+the matrix A, and this matrix is the matrix A-inverse.
+
+94
+00:03:27,016 --> 00:03:28,036
+And it turns out
+
+95
+00:03:28,062 --> 00:03:29,065
+if that you are computing A
+
+96
+00:03:29,078 --> 00:03:31,016
+times A-inverse, it turns out
+
+97
+00:03:31,040 --> 00:03:32,047
+if you compute A-inverse times
+
+98
+00:03:32,075 --> 00:03:35,038
+A you also get back the identity matrix.
+
+99
+00:03:36,099 --> 00:03:38,043
+So how did I
+
+100
+00:03:38,059 --> 00:03:39,075
+find this inverse or how
+
+101
+00:03:39,091 --> 00:03:41,075
+did I come up with this inverse over here?
+
+102
+00:03:42,072 --> 00:03:44,050
+It turns out that sometimes
+
+103
+00:03:45,006 --> 00:03:46,030
+you can compute inverses by hand
+
+104
+00:03:46,075 --> 00:03:48,033
+but almost no one does that these days.
+
+105
+00:03:48,078 --> 00:03:49,075
+And it turns out there is
+
+106
+00:03:49,084 --> 00:03:51,049
+very good numerical software for
+
+107
+00:03:52,024 --> 00:03:55,016
+taking a matrix and computing its inverse.
+
+108
+00:03:55,046 --> 00:03:56,019
+So again, this is one of
+
+109
+00:03:56,028 --> 00:03:57,011
+those things where there are lots
+
+110
+00:03:57,028 --> 00:03:59,025
+of open source libraries that
+
+111
+00:03:59,041 --> 00:04:00,043
+you can link to from any
+
+112
+00:04:00,074 --> 00:04:04,005
+of the popular programming languages to compute inverses of matrices.
+
+113
+00:04:04,099 --> 00:04:06,003
+Let me show you a quick example.
+
+114
+00:04:06,090 --> 00:04:08,034
+How I actually computed this inverse,
+
+115
+00:04:08,093 --> 00:04:11,024
+and what I did was I used software called Optive.
+
+116
+00:04:13,016 --> 00:04:13,075
+So let me bring that up.
+
+117
+00:04:14,043 --> 00:04:16,093
+We will see a lot about Optive later.
+
+118
+00:04:17,018 --> 00:04:18,018
+Let me just quickly show you an example.
+
+119
+00:04:18,091 --> 00:04:20,093
+Set my matrix A to
+
+120
+00:04:21,006 --> 00:04:22,012
+be equal to that matrix on
+
+121
+00:04:22,020 --> 00:04:23,041
+the left, type three four
+
+122
+00:04:24,041 --> 00:04:27,068
+two sixteen, so that's my matrix A right.
+
+123
+00:04:28,006 --> 00:04:29,058
+This is matrix 34,
+
+124
+00:04:29,087 --> 00:04:30,091
+216 that I have down
+
+125
+00:04:31,016 --> 00:04:32,044
+here on the left.
+
+126
+00:04:32,075 --> 00:04:33,081
+And, the software lets me compute
+
+127
+00:04:34,051 --> 00:04:35,092
+the inverse of A very easily.
+
+128
+00:04:36,025 --> 00:04:38,031
+It's like P over A equals this.
+
+129
+00:04:39,017 --> 00:04:40,055
+And so, this is right,
+
+130
+00:04:40,075 --> 00:04:41,075
+this matrix here on my
+
+131
+00:04:41,089 --> 00:04:43,032
+four minus, on my one, and so on.
+
+132
+00:04:43,069 --> 00:04:44,076
+This given the numerical
+
+133
+00:04:45,035 --> 00:04:46,063
+solution to what is the
+
+134
+00:04:46,079 --> 00:04:48,014
+inverse of A. So let me
+
+135
+00:04:48,031 --> 00:04:50,019
+just write, inverse of A
+
+136
+00:04:50,054 --> 00:04:52,005
+equals P inverse of
+
+137
+00:04:52,057 --> 00:04:54,054
+A over that I
+
+138
+00:04:55,022 --> 00:04:57,000
+can now just verify that A
+
+139
+00:04:57,012 --> 00:04:58,012
+times A inverse the identity
+
+140
+00:04:58,057 --> 00:05:00,029
+is, type A times the
+
+141
+00:05:00,062 --> 00:05:02,018
+inverse of A and
+
+142
+00:05:03,042 --> 00:05:04,054
+the result of that is
+
+143
+00:05:04,075 --> 00:05:06,018
+this matrix and this is
+
+144
+00:05:06,050 --> 00:05:07,037
+one one on the diagonal
+
+145
+00:05:08,074 --> 00:05:10,032
+and essentially ten to
+
+146
+00:05:10,039 --> 00:05:11,049
+the minus seventeen, ten to the
+
+147
+00:05:11,055 --> 00:05:13,017
+minus sixteen, so Up to
+
+148
+00:05:13,030 --> 00:05:14,073
+numerical precision, up to
+
+149
+00:05:14,086 --> 00:05:15,075
+a little bit of round off
+
+150
+00:05:15,099 --> 00:05:17,010
+error that my computer
+
+151
+00:05:17,056 --> 00:05:20,037
+had in finding optimal matrices
+
+152
+00:05:21,019 --> 00:05:22,050
+and these numbers off the
+
+153
+00:05:22,058 --> 00:05:24,004
+diagonals are essentially zero
+
+154
+00:05:24,097 --> 00:05:27,074
+so A times the inverse is essentially the identity matrix.
+
+155
+00:05:29,010 --> 00:05:30,062
+Can also verify the inverse of
+
+156
+00:05:30,089 --> 00:05:32,062
+A times A is also
+
+157
+00:05:33,018 --> 00:05:34,061
+equal to the identity,
+
+158
+00:05:35,077 --> 00:05:37,066
+ones on the diagonals and values
+
+159
+00:05:38,017 --> 00:05:39,062
+that are essentially zero except
+
+160
+00:05:39,087 --> 00:05:40,061
+for a little bit of round
+
+161
+00:05:40,083 --> 00:05:42,066
+dot error on the off diagonals.
+
+162
+00:05:45,077 --> 00:05:47,008
+If a definition that the inverse
+
+163
+00:05:47,037 --> 00:05:48,018
+of a matrix is, I had
+
+164
+00:05:48,029 --> 00:05:50,000
+this caveat first it must
+
+165
+00:05:50,029 --> 00:05:52,008
+always be a square matrix, it
+
+166
+00:05:52,041 --> 00:05:53,044
+had this caveat, that if
+
+167
+00:05:54,018 --> 00:05:56,075
+A has an inverse, exactly what
+
+168
+00:05:57,020 --> 00:05:58,026
+matrices have an inverse
+
+169
+00:05:58,081 --> 00:05:59,093
+is beyond the scope of this
+
+170
+00:06:00,019 --> 00:06:01,081
+linear algebra for review that one
+
+171
+00:06:02,004 --> 00:06:03,025
+intuition you might take away
+
+172
+00:06:03,089 --> 00:06:05,002
+that just as the
+
+173
+00:06:05,025 --> 00:06:06,044
+number zero doesn't have an
+
+174
+00:06:06,052 --> 00:06:08,025
+inverse, it turns out
+
+175
+00:06:08,043 --> 00:06:10,005
+that if A is say the
+
+176
+00:06:10,016 --> 00:06:12,098
+matrix of all zeros, then
+
+177
+00:06:13,043 --> 00:06:14,056
+this matrix A also does
+
+178
+00:06:14,076 --> 00:06:16,017
+not have an inverse because there's
+
+179
+00:06:16,043 --> 00:06:17,091
+no matrix there's no A
+
+180
+00:06:18,004 --> 00:06:19,058
+inverse matrix so that this
+
+181
+00:06:19,081 --> 00:06:21,001
+matrix times some other
+
+182
+00:06:21,012 --> 00:06:22,000
+matrix will give you the
+
+183
+00:06:22,017 --> 00:06:23,063
+identity matrix so this matrix of
+
+184
+00:06:23,074 --> 00:06:25,002
+all zeros, and there
+
+185
+00:06:25,023 --> 00:06:27,006
+are a few other matrices with properties similar to this.
+
+186
+00:06:27,064 --> 00:06:30,093
+That also don't have an inverse.
+
+187
+00:06:31,012 --> 00:06:32,019
+But it turns out that
+
+188
+00:06:32,047 --> 00:06:33,039
+in this review I don't
+
+189
+00:06:33,060 --> 00:06:35,044
+want to go too deeply into what
+
+190
+00:06:35,058 --> 00:06:36,097
+it means matrix have an
+
+191
+00:06:37,006 --> 00:06:38,055
+inverse but it turns
+
+192
+00:06:38,075 --> 00:06:39,075
+out for our machine learning
+
+193
+00:06:40,000 --> 00:06:41,073
+application this shouldn't be
+
+194
+00:06:41,082 --> 00:06:43,025
+an issue or more precisely
+
+195
+00:06:44,027 --> 00:06:46,022
+for the learning algorithms where
+
+196
+00:06:46,036 --> 00:06:47,062
+this may be an to namely
+
+197
+00:06:47,097 --> 00:06:48,099
+whether or not an inverse matrix
+
+198
+00:06:49,023 --> 00:06:50,082
+appears and I will tell when
+
+199
+00:06:50,095 --> 00:06:51,097
+we get to those learning algorithms
+
+200
+00:06:52,068 --> 00:06:53,068
+just what it means for an
+
+201
+00:06:53,075 --> 00:06:54,085
+algorithm to have or not
+
+202
+00:06:55,014 --> 00:06:57,018
+have an inverse and how to fix it in case.
+
+203
+00:06:58,000 --> 00:06:59,024
+Working with matrices that don't
+
+204
+00:07:00,076 --> 00:07:01,004
+have inverses.
+
+205
+00:07:01,031 --> 00:07:02,077
+But the intuition if you
+
+206
+00:07:02,087 --> 00:07:04,006
+want is that you can
+
+207
+00:07:04,022 --> 00:07:05,050
+think of matrices as not
+
+208
+00:07:05,074 --> 00:07:06,075
+have an inverse that is somehow
+
+209
+00:07:07,030 --> 00:07:09,050
+too close to zero in some sense.
+
+210
+00:07:10,082 --> 00:07:12,031
+So, just to wrap
+
+211
+00:07:12,067 --> 00:07:14,089
+up the terminology, matrix that
+
+212
+00:07:15,010 --> 00:07:16,060
+don't have an inverse Sometimes called
+
+213
+00:07:16,093 --> 00:07:18,042
+a singular matrix or degenerate
+
+214
+00:07:18,080 --> 00:07:20,075
+matrix and so this
+
+215
+00:07:20,097 --> 00:07:22,056
+matrix over here is an
+
+216
+00:07:22,062 --> 00:07:24,006
+example zero zero zero matrix.
+
+217
+00:07:24,069 --> 00:07:27,066
+is an example of a matrix that is singular, or a matrix that is degenerate.
+
+218
+00:07:29,087 --> 00:07:31,004
+Finally, the last special
+
+219
+00:07:31,037 --> 00:07:32,056
+matrix operation I want to
+
+220
+00:07:32,063 --> 00:07:34,012
+tell you about is to do matrix transpose.
+
+221
+00:07:34,052 --> 00:07:36,019
+So suppose I have
+
+222
+00:07:36,039 --> 00:07:37,075
+matrix A, if I compute
+
+223
+00:07:38,020 --> 00:07:41,022
+the transpose of A, that's what I get here on the right.
+
+224
+00:07:41,033 --> 00:07:42,091
+This is a transpose which is
+
+225
+00:07:43,002 --> 00:07:45,008
+written and A superscript T,
+
+226
+00:07:46,033 --> 00:07:47,024
+and the way you compute
+
+227
+00:07:47,041 --> 00:07:48,089
+the transpose of a matrix is as follows.
+
+228
+00:07:49,051 --> 00:07:50,031
+To get a transpose I am going
+
+229
+00:07:50,061 --> 00:07:51,062
+to first take the first
+
+230
+00:07:52,030 --> 00:07:54,050
+row of A one to zero.
+
+231
+00:07:55,007 --> 00:07:57,056
+That becomes this first column of this transpose.
+
+232
+00:07:58,083 --> 00:07:59,050
+And then I'm going to take
+
+233
+00:07:59,073 --> 00:08:00,064
+the second row of A,
+
+234
+00:08:00,091 --> 00:08:03,061
+3 5 9, and that becomes the second column.
+
+235
+00:08:04,043 --> 00:08:05,030
+of the matrix A transpose.
+
+236
+00:08:06,085 --> 00:08:07,089
+And another way of
+
+237
+00:08:08,008 --> 00:08:09,005
+thinking about how the computer transposes
+
+238
+00:08:10,029 --> 00:08:11,039
+is as if you're taking this
+
+239
+00:08:11,056 --> 00:08:14,004
+sort of 45 degree axis
+
+240
+00:08:14,063 --> 00:08:16,018
+and you are mirroring or you
+
+241
+00:08:16,031 --> 00:08:19,056
+are flipping the matrix along that 45 degree axis.
+
+242
+00:08:21,077 --> 00:08:23,014
+so here's the more formal
+
+243
+00:08:23,050 --> 00:08:24,082
+definition of a matrix transpose.
+
+244
+00:08:26,050 --> 00:08:29,037
+Let's say A is a m by n matrix.
+
+245
+00:08:31,030 --> 00:08:32,045
+And let's let B equal A
+
+246
+00:08:32,062 --> 00:08:34,053
+transpose and so BA transpose like so.
+
+247
+00:08:36,036 --> 00:08:37,024
+Then B is going to
+
+248
+00:08:37,047 --> 00:08:38,075
+be a n by m matrix
+
+249
+00:08:39,051 --> 00:08:42,005
+with the dimensions reversed so
+
+250
+00:08:42,083 --> 00:08:44,097
+here we have a 2x3 matrix.
+
+251
+00:08:46,037 --> 00:08:48,004
+And so the transpose becomes a
+
+252
+00:08:48,019 --> 00:08:50,075
+3x2 matrix, and moreover,
+
+253
+00:08:51,021 --> 00:08:53,057
+the BIJ is equal to AJI.
+
+254
+00:08:54,061 --> 00:08:56,002
+So the IJ element of this
+
+255
+00:08:56,022 --> 00:08:57,038
+matrix B is going to be
+
+256
+00:08:57,052 --> 00:08:59,059
+the JI element of that
+
+257
+00:08:59,089 --> 00:09:02,011
+earlier matrix A. So for
+
+258
+00:09:02,026 --> 00:09:04,014
+example, B 1 2
+
+259
+00:09:04,021 --> 00:09:06,051
+is going to be equal
+
+260
+00:09:06,094 --> 00:09:08,050
+to, look at this
+
+261
+00:09:08,062 --> 00:09:09,086
+matrix, B 1 2 is going to be equal to
+
+262
+00:09:10,050 --> 00:09:12,075
+this element 3 1st row, 2nd column.
+
+263
+00:09:13,079 --> 00:09:15,087
+And that equal to this, which
+
+264
+00:09:16,000 --> 00:09:17,083
+is a two one, second
+
+265
+00:09:18,022 --> 00:09:21,014
+row first column, right, which
+
+266
+00:09:21,041 --> 00:09:23,019
+is equal to two and some
+
+267
+00:09:23,044 --> 00:09:25,025
+of the example B 3
+
+268
+00:09:25,085 --> 00:09:28,033
+2, right, that's B
+
+269
+00:09:28,050 --> 00:09:30,025
+3 2 is this element 9,
+
+270
+00:09:30,092 --> 00:09:32,022
+and that's equal to
+
+271
+00:09:33,026 --> 00:09:35,034
+a two three which is
+
+272
+00:09:35,050 --> 00:09:37,024
+this element up here, nine.
+
+273
+00:09:38,092 --> 00:09:40,011
+And so that wraps up
+
+274
+00:09:40,034 --> 00:09:41,076
+the definition of what it
+
+275
+00:09:41,086 --> 00:09:42,075
+means to take the transpose
+
+276
+00:09:43,050 --> 00:09:44,075
+of a matrix and that
+
+277
+00:09:44,092 --> 00:09:48,000
+in fact concludes our linear algebra review.
+
+278
+00:09:49,029 --> 00:09:50,039
+So by now hopefully you know
+
+279
+00:09:50,065 --> 00:09:51,059
+how to add and subtract
+
+280
+00:09:52,017 --> 00:09:53,047
+matrices as well as
+
+281
+00:09:53,063 --> 00:09:55,011
+multiply them and you
+
+282
+00:09:55,026 --> 00:09:57,000
+also know how, what are
+
+283
+00:09:57,009 --> 00:09:58,045
+the definitions of the inverses
+
+284
+00:09:58,092 --> 00:10:00,037
+and transposes of a matrix
+
+285
+00:10:01,040 --> 00:10:02,017
+and these are the main operations
+
+286
+00:10:02,086 --> 00:10:04,025
+used in linear algebra
+
+287
+00:10:05,012 --> 00:10:05,087
+for this course.
+
+288
+00:10:06,012 --> 00:10:08,012
+In case this is the first time you are seeing this material.
+
+289
+00:10:08,097 --> 00:10:10,009
+I know this was a lot
+
+290
+00:10:10,076 --> 00:10:12,053
+of linear algebra material all presented
+
+291
+00:10:13,000 --> 00:10:14,025
+very quickly and it's a
+
+292
+00:10:14,051 --> 00:10:16,035
+lot to absorb but
+
+293
+00:10:16,053 --> 00:10:17,084
+if you there's no need
+
+294
+00:10:18,005 --> 00:10:19,005
+to memorize all the definitions
+
+295
+00:10:20,002 --> 00:10:21,058
+we just went through and if
+
+296
+00:10:21,067 --> 00:10:23,022
+you download the copy of either
+
+297
+00:10:23,041 --> 00:10:24,012
+these slides or of the
+
+298
+00:10:24,053 --> 00:10:27,042
+lecture notes from the course website.
+
+299
+00:10:28,037 --> 00:10:29,046
+and use either the slides or
+
+300
+00:10:29,059 --> 00:10:30,057
+the lecture notes as a reference
+
+301
+00:10:31,049 --> 00:10:32,063
+then you can always refer back
+
+302
+00:10:32,089 --> 00:10:34,007
+to the definitions and to figure
+
+303
+00:10:34,012 --> 00:10:35,020
+out what are these matrix
+
+304
+00:10:35,059 --> 00:10:38,048
+multiplications, transposes and so on definitions.
+
+305
+00:10:39,013 --> 00:10:40,022
+And the lecture notes on the course website also
+
+306
+00:10:40,066 --> 00:10:41,099
+has pointers to additional
+
+307
+00:10:42,045 --> 00:10:44,046
+resources linear algebra which
+
+308
+00:10:44,064 --> 00:10:46,083
+you can use to learn more about linear algebra by yourself.
+
+309
+00:10:48,075 --> 00:10:52,046
+And next with these new tools.
+
+310
+00:10:53,053 --> 00:10:54,083
+We'll be able in the next
+
+311
+00:10:55,010 --> 00:10:56,064
+few videos to develop more colorful
+
+312
+00:10:56,099 --> 00:10:58,045
+forms of linear regression that
+
+313
+00:10:58,075 --> 00:10:59,070
+can view of a lot
+
+314
+00:10:59,077 --> 00:11:00,063
+more data, a lot more
+
+315
+00:11:00,078 --> 00:11:01,077
+features, a lot more training
+
+316
+00:11:02,022 --> 00:11:04,009
+examples and later on
+
+317
+00:11:04,039 --> 00:11:05,075
+after the new regression we'll actually
+
+318
+00:11:06,007 --> 00:11:07,053
+continue using these linear
+
+319
+00:11:07,083 --> 00:11:09,037
+algebra tools to derive more
+
+320
+00:11:09,076 --> 00:11:11,077
+powerful learning algorithims as well

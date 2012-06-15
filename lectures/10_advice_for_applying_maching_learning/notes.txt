@@ -1,0 +1,42 @@
+
+model selection (how to find if the hypothesis is general enough)
+-------------------
+split training data into 3 slices
+training set  60%
+cross validation set   20%
+test set   20%
+
+compute error for each set
+
+
+
+
+bias  vs variance (tell if bias or variance based on degree of order)
+---------------------------------------------
+high bias(underfitting): J-train and J-cv are both high, J-cv slightly higher
+high variance(overfitting): J-train is low, J-cv is high
+
+
+
+regularization term (tell if bias or variance based on lambda)
+------------------------
+similar, but test different lambda other than degree of order.
+
+
+learning curve (tell if bias or variance based on m)
+-------------------------------------------
+as we can see that the reason that J takes a 1/2m is to prevent J from propotionally affected by the number of m so that we can directly use J to mesure error.
+J-cv is usually always larger than J-train becaue theta is optimized based on training data, but it can be smaller.
+
+in high-bias condition, larger m dosn't help
+in high-variance condition, larger m does help.
+
+
+
+decide what to do next
+----------------------
+rule out half of the approaches by decide bias vs variance.
+for neural networks is always better to have more layers and use lambda to address overfitting problems, rather than simpler network. but the disadvantage is computational complexity
+
+
+A cross validation set is useful for choosing the optimal non-model parameters like the regularization parameter ¦Ë, but the train / test split is sufficient for debugging problems with the algorithm itself.
