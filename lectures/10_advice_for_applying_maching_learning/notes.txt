@@ -31,6 +31,10 @@ J-cv is usually always larger than J-train becaue theta is optimized based on tr
 in high-bias condition, larger m dosn't help
 in high-variance condition, larger m does help.
 
+J-train should grow by size, J-cv should always on the whole CV set.(refer ex5)
+when do feature normalization, J-CV sould use J-train's mu and sigma.
+usually adding polynomial features will need feature scalling as well (refer ex5)
+
 
 
 decide what to do next

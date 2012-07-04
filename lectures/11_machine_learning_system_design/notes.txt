@@ -1,0 +1,69 @@
+- honey pots project to get traning set from spammers (more traning data)
+- more features based on routing info
+- more features on body
+- algorithm to detect misspellings (no need to correct then)
+
+ 
+we can't say which one will make significant improvement.
+
+
+
+error analysis
+------------------
+1, use simple hypothes (because you never know which will be the most fruitful way)
+2. plot learning curves (let evidence guide decisions to prevent Premature Optimizations.) to decide add more features and more data
+3. error analysis. focus on those misclassified examples to find patterns, then you know what to improve
+
+e.g.
+what type of email did it misclassify most?
+
+algorithms to find more features?(misspelling, punctuation?)
+
+stemming software(porter stemmer)
+
+
+
+
+J-train is use to optimize theta, J-CV is used to optimize lambda or d(address bias vs variance), J-test is use to test generalization.
+
+J-CV is the standard metric to evaluate algorithm's performance.
+
+the first simple algorithm is never too quick or too dirty. based on that and the single numeric metric J-CV then you can decide what to improve. (know the right direction)
+
+
+
+
+
+skewed classes
+---------------------
+with skewed classes, error rate is no longer the useful metric to determine if the algorithm is improved.
+because it can "cheat"
+
+precision and recall 2x2 table.
+y=1 for rare conditions.
+
+
+trading off
+---------------
+increase threshold in logistic regression will have higher precission lower recall
+
+notice the curve in precision-recall trade off, they have different extream.
+
+F1 score: 2PR/(P+R)
+
+
+
+data set (features sufficient? data enough?)
+------------
+different algorithm tends to have similar range of accuracy. but the size of data set really matters.
+to determine if features is enough, think about a human can predict it or not.
+
+for low bias algorithm, getting more data will help prevent overfitting
+
+if features are not sufficient, even complex algorithm will still have bias.
+enough features, large data size are 2 key point of designing a good ML system.
+
+
+Training on a lot of data is likely to give good performance when two of the following conditions hold true.
+1. feature sufficient (not including high order terms)
+2. algorithm complex.

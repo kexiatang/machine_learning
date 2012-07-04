@@ -1,0 +1,20 @@
+error: setting lambda to 0 when computer error_train and error_val???
+
+
+
+
+
+
+
+
+
+
+In case of small training sets, training error and cross validation error are to be determined by taking averages across multiple sets of randomly selected examples. It says for each i (from 1 to number of training examples) to choose i examples randomly, train theta on these examples and calculate training and cross validation errors with this theta, and to do these steps 50 times in order to take the average of the 50 training/cv-errors. What I don't understand is: one should not take all cross validation examples for this, but only (randomly selected) i examples. Why take only i examples of the CV set?
+
+In theory, if the CV set is also small and even smaller than the training set, one couldn't select i CV-examples for #(training examples) < i <= #(CV examples). But that is not the main point. Why not take the whole CV set? Is it to make both training and CV sets balanced in size? And why so? The resulting learning curves aren't significantly different for examples sizes greater than 4.
+
+ 
+A very good point! This is in direct contradiction with the advice on page 6 of the PE 5 description. The paper explicitly states there to compute the cross validation error over the entire cross validation set. I think the same strategy should be used here, too. In other words, it is OK to choose random i examples from the training set, but always use the full CV set.
+
+ 
+I agree with the last coment
