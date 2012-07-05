@@ -14,7 +14,6 @@ delta is actually the partial derivative of cost(i) on z where i is the record n
 
 
 epsilon 10e-4 is good, because if big, not accurate, if too small, underflow problem.
-
 one-side difference estimate is not as good as two-sides difference
 
 

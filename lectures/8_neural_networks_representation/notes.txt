@@ -4,7 +4,7 @@ so we use neural network.
 
 bias unit
 
-notice that bias bias unit doesn't contribute to the next layer's bias unit. all layer's bias unit is origin. not an outcome of the former layer linear transformation.
+notice that bias unit doesn't contribute to the next layer's bias unit. all layer's bias unit is origin. not an outcome of the former layer linear transformation.
 
 "forward propagation"
 
@@ -12,3 +12,6 @@ notice that bias bias unit doesn't contribute to the next layer's bias unit. all
 neural network is a generalization of logistic regression
 
 feedforward propagation
+
+
+a good reason that neural network ca deal with a lot of features such as pixels is because it doesn't need feature mapping (polynomial terms), the non-linear part is accomplished via layers.

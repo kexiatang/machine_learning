@@ -1,0 +1,29 @@
+caveat:
+C is not equal to 1/lambda, but when C = 1/lambda, those 2 equations give the same optimized theta.
+compared to logisitc regression, 1/m is canceled, although this will not affact theta, but it no longer stand for the average error.
+
+if C is large, we are motivated to pay more attention to optimize the first part rather than the regularization part, but still, all theta except theta0 will be regularized.
+
+
+when descision boundary of SVM has a perfect margin, the total cost can be 0 (without regularization term)
+
+because in SVM the costfunction is directly get from z, wheras in logistic regression the cost function is based on hypothesis, so in SVM hypothesis dosen't need to be sigmoid, it can be simplified just for prediction.
+
+
+
+
+margin rationale:
+-----------------------
+in the third vedio, the math rationale is actually proving SVM will maximize margin even when all samples are satisfied by 0 cost.
+
+in the cost function, the initial margin is determined by the corner point (1 and -1) in this case. try to draw the lines and see how the corner point related to margin. when all samples satisfiy that margin, then SVM will maximize margin because of the regularization term.
+
+that's why when C is large, the first term tends to be 0, the decision boundary will try it's best to seperate all sample. when C is small, SVM tends to ignore outliers.(this is general case, still depend on data?)
+
+
+
+q: 
+-------------------------
+does SVM sometimes has multiple(infinity) number of optimal solution?
+
+when there's case that some samples are really far from decision boundary, SVM is better than logistic regression because it only conisder margin, everything over the margin will have 0 cost, however logistic regression boundary will be affacted by that far sample and lead to smaller margin.(in the case without regularization)
