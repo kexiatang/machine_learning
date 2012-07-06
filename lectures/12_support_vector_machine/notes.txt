@@ -22,6 +22,47 @@ that's why when C is large, the first term tends to be 0, the decision boundary 
 
 
 
+theta'* M * theta: implementation for better computational speed for large traning set (large amount of features).
+kernals can be applied for logistic regression, but the computational simplification only applies for SVM.
+Therefore using kernals in logistic regression will be to slow.
+there's existing software dealing with optimizing the SVM cost function.
+
+
+
+
+user an SVM
+---------------
+library: liblinear, libsvm
+choose C
+choose kernal: 
+-linear kernal when m small n large (preventing overfitting)
+-gaussian kernal (do feature scalling before use it.)
+
+kernal chosen must satisfy Mercer's Theorem
+-polynomial kernal: (x'l+constant)^degree  (usually worse than gaussian. used when x and l are strictly non-negative) when x and l are close the inner product will be large.
+- more kernals
+
+multiclass: run 1-vs-all, and pick the biggerst theta'x.
+SVM cost function is convex. no local minimum
+
+
+logistic regression vs SVM
+------------------------------
+if n(10000) large(relative to m(10-1000)) use logistic or SVM without kernal. (prevent over fitting)
+if n is small(1-1000), m is intermediate(10-10000), use SVM with gaussian kernal.
+if n is small(1-1000), m is large(50000), create more features with logistic regression, or SVM without kernal.
+
+feature scalling is necessary when different feature has significant different range to make the equally important.
+
+
+
+
+review questions
+-----------------
+A linearly separable dataset can usually be separated by many different lines. Varying the parameter C will cause the SVM's decision boundary to vary among these possibilities. For example, for a very large value of C, it might learn larger values of ¦È in order to increase the margin on certain examples.
+
+
+
 q: 
 -------------------------
 does SVM sometimes has multiple(infinity) number of optimal solution?
