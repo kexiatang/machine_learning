@@ -1,0 +1,65 @@
+dimensionality reduction is another type of unsupervised learning
+
+
+
+motivation 1: data compression
+---------------------------------
+compress data, less computing resource, speed up learning
+
+
+the gist of compression is by finding some rules of the dataset and simplify the representation of data by the rule.(not only by dimensionality reduction ,also in text compression we can find duplicate words by representing them using word with indices.)
+
+
+
+motivation 2 data visualization
+---------------------------------
+usually map to k=2 or k=3.
+capture main features.
+
+
+
+PCA
+-------------
+线性子空间 linear subspace spanned by the set of k vectors
+
+PCA is NOT linear regression (notice the projection directly. linear regression is project to y, PCA is othogonal to the line)
+PCA is for dimensionality reduction, not for prediction
+
+
+
+PCA detail
+-----------------
+data preprocessing: mean normalization and feature scalling
+
+covariance matrix (协方差矩阵) see wikipedia, you mayfind here because mean normalization, mu=0, Expectation = mean.
+
+svd/eig funtion
+symmetric positive semi-definite
+
+
+
+how to choose K
+---------------------
+average sqared projection error/variation   <= 0.01(or other number)
+means "99% of the variance is retained"
+this is useful to evaluate a good k
+
+start with k=1, and then try 2, 3, 4.. in increasing order until satisfy a good %.
+by utilizing S matrix.
+
+
+reconstruction from compressed representation
+---------------------------------------------
+simple linear algebra based on Z= U'x => Xapp = Uz = UU'x.
+we can see that PCA is loss compression.
+
+
+application
+--------------
+-compression
+1.reduce memory/disk
+2.speed up learning algorithm
+
+-visualization (k=2 or 3)
+
+ATTENTIon: PCA reduce features, but it's a bad idea to used for prevent overfitting.(not reasonable) because it ignores y (which is valuable information).

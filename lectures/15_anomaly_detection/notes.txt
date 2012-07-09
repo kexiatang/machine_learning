@@ -1,0 +1,9 @@
+anomaly detection example
+-fraud detection
+-manufacturing
+-monitoring computers in a data center.
+
+
+algorithm:
+-------------
+density estimation

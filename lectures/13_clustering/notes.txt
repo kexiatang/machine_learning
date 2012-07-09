@@ -1,0 +1,51 @@
+clustering application:
+-------------------------
+market segmentation
+social networking
+organize computing clusters
+astronomical data analysis
+
+
+algorithm:
+---------------------
+input: K and x(i)
+repleat{
+  cluster assignment (assign to centroid)
+  move centroid(recalculate)
+}
+
+if a centroid is assigned 0 point, then:
+eliminate that centroid
+or
+randomly re-initialize that centroid. if K centroid is necessary.
+
+
+cost function
+-----------------
+minimize average distance.
+also called distortion 
+
+the repeating iteration is actually minizing the cost function by 2 steps
+compared to gradient descent, this is easier particularly applied to k-means.
+(k-means distortion is not convex)
+
+the cost should be strictly decreasing, otherwise there's a bug
+
+
+
+random initialization (avoid local minimum)
+--------------------------
+K<M
+randoming assign mu to k x(i)
+run multiple times.when K is relatively small
+
+
+choose K
+------------------------
+first consider requirement.(how many segment we need?)
+choose by hand. because even an expert can not visualize how many K is suitable sometimes, how can a machine know it?
+
+or
+
+elbow method (worth to try, but not always found one)
+

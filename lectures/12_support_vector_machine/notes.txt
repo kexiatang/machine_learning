@@ -52,7 +52,7 @@ if n(10000) large(relative to m(10-1000)) use logistic or SVM without kernal. (p
 if n is small(1-1000), m is intermediate(10-10000), use SVM with gaussian kernal.
 if n is small(1-1000), m is large(50000), create more features with logistic regression, or SVM without kernal.
 
-feature scalling is necessary when different feature has significant different range to make the equally important.
+feature scalling is necessary when different feature has significant different range to make the equally important to prevent one feature dominating the result.
 
 
 
