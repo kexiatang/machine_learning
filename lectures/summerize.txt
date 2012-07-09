@@ -16,3 +16,28 @@ algorithm: gradient descent or advanced optimizations
 
 unsupervised learning
 -----------------------
+1.clustering
+	k-means (image compression, market segmentation, social networking, computer clustering, 		astronmical analysis)
+2.dimensionality reduction
+	PCA
+		-data compression(easy store, fast speed)
+		-visualization(k=1,2,3)
+
+
+
+
+extra
+-------
+abnomaly detection / density detection (use instead of supervised learning when postive example is rare and/or unpredictable)
+recommender systems/ similarity checking
+
+
+
+
+
+
+feature normalizations apply to:
+- linear regression, polynomial regression (to accelerate gradient speed)
+- SVM with Gaussian kernal (to prevent one feature from dominating the result)
+- PCA (to make 0 mean)
+- recommender systems(only do mean normalization, no scalling)

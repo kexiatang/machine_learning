@@ -1,0 +1,39 @@
+one of the most important application of machine learning
+
+content-based recommender system
+-----------------------------------
+given feature x, estimate theta
+treat each user as a seperate linear regression problem. assume for each move we have features defined.
+
+
+
+collaborative filtering
+------------------------
+given theta, estimate feature x
+
+
+original idea:
+iterate these 2 and converge x and theta
+
+
+
+more efficient algorithm
+----------------------
+combine 2 functions into one. now x and theta both get rid of the first term x0 and theta0, because all the features can be learned, the number of feature is not fixed, the algorithm can fit the first feature with 1 if it's needed to minimize cost
+
+random initailization in necessary for symmetry breaking for different x.
+
+
+vectorize
+--------------
+low rank matrix factorization
+
+
+find the most similar product with min distance to the sammple product.
+
+number of features is defined as input.
+
+
+feature normalization
+------------------------
+subtract the mean, but no need to do feature scalling because they are already in the same range.

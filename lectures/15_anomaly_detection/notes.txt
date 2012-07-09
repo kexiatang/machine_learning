@@ -7,3 +7,82 @@ anomaly detection example
 algorithm:
 -------------
 density estimation
+build gaussian model on chosen features.
+
+
+
+application
+-------------
+usually traning set is unlabled good examples.
+in cv and test there's few anomalous examples.
+
+sometimes in anomaly detection people use same data in cv and test.
+
+use F1 sorce to evaluate because it's always skewed classes
+use CV to get the optimal epsilon to maximize F1 score.
+
+
+
+anomaly detection vs supervised learning
+----------
+use anomaly detection when:
+- *small portion of positive (most important criteria, not enough info for supervised learning)
+- many types of anomalies.(positive examples don't have similar features), coming anomalies might be unpredictable features.
+
+use anomaly detection for:
+-fraud detection
+-manufacturing
+-monitoring computers in a data center.
+
+
+use supervised learning when:
+- *both + and - are large amount.(most important criteria)
+- both + and - have their similar features
+
+use supervised learning for:
+- prediction
+- classification
+
+SOMETIMES which one to choose is quite subjective. exchangeable.
+
+
+choose features
+---------------
+
+-when non-gaussian feature:
+draw histograms to see if each features complies with gaussian
+feature transformation to make gaussian: usually use log(x+c) or ^0.5 ...
+
+-when p(x) is comparable for both normal and anomaly.
+error analysis
+maybe wrong feature is chosen. inspect the positve example find new features that is typical.
+
+choose features that are typical for positve or negative examples.
+if 2 features are closely related, combine them into one
+
+
+
+multivariate gaussian distribution
+-----------------------
+some times seperate gaussian fail to address some anomalies(in case of a skewed ellips shape that multiple features are positively or negatively correlated)
+
+simply multiple seperate gaussian will only lead to axis-aligned ellipse shapes.
+
+
+NOTE that gaussion distribution always integrate to 1, but in gaussian kernal, the maximum is always 1.
+
+in covariance matrix, if all features are not related, then the matrix will be diagnal. 
+the more correlated, the larger the number in the non-diagnal area.
+
+anomaly detection using multivariate gaussian distribution
+
+original model corresponds to special case multi-variate gaussian distribution where sigma is diagnal matrix. with the diagnal elements equals to sigma1^2, sigma2^2,.... sigman^2.
+
+use original model?(more often)
+-when features are not related. or related feature has been combined into one. (cpu/memory)
+-computationally cheaper.
+
+multi-variate gaussian?
+-when features are correlated
+-computationally expensive (matrix inverse)
+-must have m>n, n features must be not linearly dependant. otherwise non-inversible
