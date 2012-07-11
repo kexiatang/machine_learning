@@ -23,12 +23,13 @@ unsupervised learning
 		-data compression(easy store, fast speed)
 		-visualization(k=1,2,3)
 
+3.anomaly detection
 
 
 
 extra
 -------
-abnomaly detection / density detection (use instead of supervised learning when postive example is rare and/or unpredictable)
+anomaly detection / density detection (use instead of supervised learning when postive example is rare and/or unpredictable)
 recommender systems/ similarity checking
 
 
