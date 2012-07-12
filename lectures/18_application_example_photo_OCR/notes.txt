@@ -1,0 +1,52 @@
+
+
+photo optical character recognition
+
+pedestrian detection
+------------------------
+fixed aspect ratio
+
+
+OCR
+----------------
+1.text detection
+train binary classifier(yes/not text)
+single character slide window
+expansion operator(is a pixel within some distance to a white pixel?)
+exclude high and thin
+
+
+2.text segregation
+train binary classifier (have/not have gap)
+run 1d sliding window
+
+3.character classification
+multi-class classification
+
+
+
+artificial data synthesis
+-----------------------------
+example to make your own training set for characters: 
+1)find all fonts and past them in different background.
+or 
+2)make artificial warping and distortion on real data.(based on grids)
+
+voice: add noise
+
+the noise or distortion should be realistic, pure randome noise won't help a lot.(do something that you expect to see in general test set)
+
+
+discussion:
+before getting more data, make sure that the algorithm is low bias.
+how much work would it be to get more training data?
+- artificial data synthesis
+- collect yourself, #hours?
+- crowd sourcing (Amazon mechanical turk)
+
+
+Ceiling analysis
+--------------------
+in a pipelined module, manually set the first one module to be perfect see how much imporvement can be gain from that. then set the second to be perfect... after testing all module, decide to work on the module that has the biggest potential to improve the overall performance.
+
+real example. removing background before face detection isn't gonna help the accuracy a lot. but 2 engineer spent 1.5 year on it without doing ceiling analysis beforehand.

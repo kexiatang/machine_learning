@@ -1,0 +1,63 @@
+first attempt: look at learning curve to see if m matters.
+
+
+
+
+stochastic gradient descent
+--------------------------
+faster than batch gradient descent in large scale data
+
+1. radomly shuffle dataset (make converge a little faster)
+2. repeat {1...m to pick single data record for each iteration}
+
+
+don't need the whole data set to start.
+
+won't strictly converge, but wandering around the optimal point.
+won't strictly decrease as well. trying to change theta to decrease cost for 1 data record at a time(but not necessarily will decrease the whole cost)
+
+
+
+mini-batch gradient descent (in between)
+-------------------------------
+use b examples in each iteration. b= 10~100 usually
+mini-batch will outperform stochastic when have good vectorized implementation, some library will know how to partially parallelize computation over the b examples.
+
+only thing is an extra parameter b.
+when b=m it's batch gradient descent, but hard to parallelize, since m is large
+
+
+
+stochastic convergence (monitering and tuning alpha)
+----------------------------
+plot every 1000 iterations(say) the average cost() and iterations see if it's decreasing generally
+only if the curve is increasing, try to decrease learning rate
+increase average number of cost will make curve more smooth.
+
+slowly decrease alpha to converge.
+c1/(iterationNumber+c2)
+
+
+online learning
+----------------
+it's based on the idea of stochastic gradient descent, allow to train with 1 example at a time continously.
+once one example is consumed, discard it.
+
+online learning can capture trends(environment change, user taste) along the time. so more up-to-date, more adaptive to new situation
+
+CTR(click through rate) estimation
+
+combine with collaborative filtering system
+
+
+
+map reduce
+-----------
+as long as task can be divide and combine without affacting result
+multi-computer
+multi-core(no network latency)
+multi-process?
+
+usually vectorized implemenation will be auto-parallelized by many libraries. 
+
+hadoop
